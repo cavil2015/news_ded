@@ -16,20 +16,28 @@
 
 ## Запуск
 
-1. **Клонирование репозитория**:
-   Проект содержит веса моделей (Git LFS). Для корректного скачивания убедитесь, что у вас установлен [Git LFS](https://git-lfs.com/).
+1. **Клонирование репозитория проекта**:
    ```bash
-   git lfs install
    git clone https://github.com/cavil2015/news_ded.git
    cd news_ded
    ```
 
-2. **Зависимости**:
+2. **Загрузка модели (Offline)**:
+   Чтобы скрипт работал на 100% локально и не скачивал ничего из интернета во время исполнения, необходимо скачать веса модели с Hugging Face в папку `models/`. Убедитесь, что у вас установлен [Git LFS](https://git-lfs.com/).
+   ```bash
+   mkdir models
+   cd models
+   git lfs install
+   git clone https://huggingface.co/cointegrated/rubert-tiny2
+   cd ..
+   ```
+
+3. **Зависимости**:
    ```bash
    pip install -r requirements.txt
    ```
 
-3. **Данные**:
+4. **Данные**:
    Положите данные (`news_dump_full.json` и `synthetic_duplicates.json`) в папку `data/`. Для работы метрики оценки качества (Adjusted Rand Index) используйте поле `true_cluster_id`.
 
 4. **Запуск скрипта**:
