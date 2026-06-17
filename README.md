@@ -16,12 +16,18 @@
 
 ## Запуск
 
-1. **Зависимости**:
+1. **Клонирование репозитория**:
+   Проект содержит веса моделей (Git LFS). Для корректного скачивания убедитесь, что у вас установлен [Git LFS](https://git-lfs.com/).
+   ```bash
+   git lfs install
+   git clone https://github.com/cavil2015/news_ded.git
+   cd news_ded
+   ```
+
+2. **Зависимости**:
    ```bash
    pip install -r requirements.txt
    ```
-
-
 
 3. **Данные**:
    Положите данные (`news_dump_full.json` и `synthetic_duplicates.json`) в папку `data/`. Для работы метрики оценки качества (Adjusted Rand Index) используйте поле `true_cluster_id`.
