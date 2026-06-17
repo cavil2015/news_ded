@@ -1,0 +1,5 @@
+venv/
+__pycache__/
+.env
+data/news_dump_full.json
+data/synthetic_duplicates.json

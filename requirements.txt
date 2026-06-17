@@ -1,0 +1,13 @@
+pandas
+numpy
+sentence-transformers
+faiss-cpu
+scipy
+pydantic
+openai
+scikit-learn
+python-dotenv
+networkx
+pytest
+transformers
+torch

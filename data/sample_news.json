@@ -1,0 +1,50 @@
+[
+  {
+    "id": "4",
+    "title": "iPhone 15 announced by Apple",
+    "text": "The highly anticipated iPhone 15 is finally here, featuring a USB-C connector and a titanium frame.",
+    "source": "The Verge",
+    "published_at": "2023-09-12T10:30:00Z",
+    "true_cluster_id": 1
+  },
+  {
+    "id": "5",
+    "title": "Apple iPhone 15 launch event",
+    "text": "At today's event, Apple unveiled the iPhone 15 lineup, moving away from Lightning to USB-C.",
+    "source": "CNET",
+    "published_at": "2023-09-12T10:45:00Z",
+    "true_cluster_id": 1
+  },
+  {
+    "id": "6",
+    "title": "Stocks fall sharply on inflation data",
+    "text": "Markets took a hit today as the latest inflation report spooked investors globally.",
+    "source": "Bloomberg",
+    "published_at": "2023-09-12T11:30:00Z",
+    "true_cluster_id": 2
+  },
+  {
+    "id": "7",
+    "title": "Global markets down amid inflation worries",
+    "text": "A massive sell-off in global stock markets occurred today due to rising inflation concerns.",
+    "source": "WSJ",
+    "published_at": "2023-09-12T11:45:00Z",
+    "true_cluster_id": 2
+  },
+  {
+    "id": "8",
+    "title": "Quantum computing breakthrough",
+    "text": "A major leap forward in quantum computing was announced by researchers today.",
+    "source": "Nature",
+    "published_at": "2023-09-12T12:30:00Z",
+    "true_cluster_id": 3
+  },
+  {
+    "id": "9",
+    "title": "Researchers make quantum leap",
+    "text": "A new paper details a significant advancement in the field of quantum computing.",
+    "source": "Wired",
+    "published_at": "2023-09-12T13:00:00Z",
+    "true_cluster_id": 3
+  }
+]

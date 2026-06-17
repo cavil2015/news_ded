@@ -1,0 +1,3492 @@
+[
+  {
+    "cluster_id": 0,
+    "canonical_news_id": 1054091,
+    "news_ids": [
+      54311,
+      1054599,
+      1054309,
+      1054491,
+      54309,
+      54414,
+      54507,
+      1054234,
+      1054230,
+      1054416,
+      54503,
+      1054560,
+      54678,
+      1054244,
+      54237,
+      54304,
+      54120,
+      1054172,
+      54667,
+      54177,
+      1054396,
+      54234,
+      1054442,
+      54188,
+      1054303,
+      1054353,
+      54253,
+      54543,
+      54535,
+      54485,
+      54390,
+      1054609,
+      54573,
+      54235,
+      1054667,
+      54525,
+      1054304,
+      1054524,
+      1054414,
+      1054479,
+      54227,
+      1054570,
+      54570,
+      54576,
+      1054486,
+      1054180,
+      1054453,
+      1054171,
+      1054192,
+      54555,
+      54100,
+      1054187,
+      1054268,
+      1054288,
+      1054311,
+      1054584,
+      54316,
+      1054456,
+      54538,
+      54416,
+      54123,
+      1054190,
+      54453,
+      54641,
+      54395,
+      54446,
+      54396,
+      54221,
+      54187,
+      54526,
+      54577,
+      1054576,
+      1054393,
+      1054173,
+      1054174,
+      1054642,
+      1054543,
+      54524,
+      54230,
+      1054658,
+      54268,
+      1054537,
+      1054162,
+      54609,
+      1054539,
+      1054641,
+      1054188,
+      54611,
+      54456,
+      1054647,
+      1054395,
+      54681,
+      1054150,
+      54277,
+      1054503,
+      1054540,
+      54299,
+      54335,
+      1054256,
+      1054120,
+      54190,
+      1054681,
+      54644,
+      1054091,
+      1054227,
+      1054179,
+      1054535,
+      1054389,
+      54654,
+      1054299,
+      54640,
+      1054525,
+      1054654,
+      54393,
+      1054611,
+      54491,
+      54484,
+      54347,
+      1054335,
+      54584,
+      54180,
+      1054507,
+      1054554,
+      54150,
+      54486,
+      54599,
+      54179,
+      1054250,
+      1054485,
+      54192,
+      54172,
+      54647,
+      54658,
+      54442,
+      54642,
+      54108,
+      1054277,
+      1054573,
+      54250,
+      54540,
+      54288,
+      54171,
+      54091,
+      1054587,
+      1054271,
+      1054390,
+      1054259,
+      54389,
+      1054577,
+      1054555,
+      1054253,
+      1054235,
+      54303,
+      54162,
+      1054316,
+      1054657,
+      1054640,
+      1054177,
+      54474,
+      1054526,
+      1054644,
+      54537,
+      1054474,
+      1054108,
+      1054484,
+      1054237,
+      1054123,
+      54539,
+      54353,
+      54256,
+      54560,
+      54329,
+      54271,
+      1054678,
+      1054221,
+      54587,
+      54174,
+      1054100,
+      1054347,
+      1054538,
+      1054329,
+      1054446,
+      54173,
+      54244,
+      54554
+    ]
+  },
+  {
+    "cluster_id": 1,
+    "canonical_news_id": 1054276,
+    "news_ids": [
+      1054276,
+      54276
+    ]
+  },
+  {
+    "cluster_id": 2,
+    "canonical_news_id": 1054333,
+    "news_ids": [
+      1054333,
+      54333
+    ]
+  },
+  {
+    "cluster_id": 3,
+    "canonical_news_id": 54247,
+    "news_ids": [
+      54247,
+      1054247
+    ]
+  },
+  {
+    "cluster_id": 4,
+    "canonical_news_id": 1054282,
+    "news_ids": [
+      1054282,
+      54282
+    ]
+  },
+  {
+    "cluster_id": 5,
+    "canonical_news_id": 54129,
+    "news_ids": [
+      54129,
+      1054129
+    ]
+  },
+  {
+    "cluster_id": 6,
+    "canonical_news_id": 54147,
+    "news_ids": [
+      54147,
+      1054147
+    ]
+  },
+  {
+    "cluster_id": 7,
+    "canonical_news_id": 1054527,
+    "news_ids": [
+      1054527,
+      54527
+    ]
+  },
+  {
+    "cluster_id": 8,
+    "canonical_news_id": 54666,
+    "news_ids": [
+      54666,
+      1054666
+    ]
+  },
+  {
+    "cluster_id": 9,
+    "canonical_news_id": 54098,
+    "news_ids": [
+      54239,
+      1054239,
+      54098,
+      1054098
+    ]
+  },
+  {
+    "cluster_id": 10,
+    "canonical_news_id": 54421,
+    "news_ids": [
+      54421,
+      1054421
+    ]
+  },
+  {
+    "cluster_id": 11,
+    "canonical_news_id": 1054101,
+    "news_ids": [
+      1054101,
+      54101
+    ]
+  },
+  {
+    "cluster_id": 12,
+    "canonical_news_id": 1054404,
+    "news_ids": [
+      1054404,
+      54404
+    ]
+  },
+  {
+    "cluster_id": 13,
+    "canonical_news_id": 1054233,
+    "news_ids": [
+      1054450,
+      54571,
+      1054233,
+      54233,
+      1054571,
+      54450
+    ]
+  },
+  {
+    "cluster_id": 14,
+    "canonical_news_id": 1054670,
+    "news_ids": [
+      1054670,
+      54670
+    ]
+  },
+  {
+    "cluster_id": 15,
+    "canonical_news_id": 54391,
+    "news_ids": [
+      54391,
+      1054391
+    ]
+  },
+  {
+    "cluster_id": 16,
+    "canonical_news_id": 54273,
+    "news_ids": [
+      54273,
+      1054273
+    ]
+  },
+  {
+    "cluster_id": 17,
+    "canonical_news_id": 1054275,
+    "news_ids": [
+      1054275,
+      54275
+    ]
+  },
+  {
+    "cluster_id": 18,
+    "canonical_news_id": 1054403,
+    "news_ids": [
+      1054403,
+      54403
+    ]
+  },
+  {
+    "cluster_id": 19,
+    "canonical_news_id": 54413,
+    "news_ids": [
+      54413,
+      1054413
+    ]
+  },
+  {
+    "cluster_id": 20,
+    "canonical_news_id": 54588,
+    "news_ids": [
+      54588,
+      1054588
+    ]
+  },
+  {
+    "cluster_id": 21,
+    "canonical_news_id": 54608,
+    "news_ids": [
+      54608,
+      1054608
+    ]
+  },
+  {
+    "cluster_id": 22,
+    "canonical_news_id": 54531,
+    "news_ids": [
+      54531,
+      1054531
+    ]
+  },
+  {
+    "cluster_id": 23,
+    "canonical_news_id": 54324,
+    "news_ids": [
+      54373,
+      54324,
+      54370,
+      1054337,
+      1054373,
+      1054324,
+      1054370,
+      54337
+    ]
+  },
+  {
+    "cluster_id": 24,
+    "canonical_news_id": 1054344,
+    "news_ids": [
+      1054344,
+      54344
+    ]
+  },
+  {
+    "cluster_id": 25,
+    "canonical_news_id": 54184,
+    "news_ids": [
+      54184,
+      1054184
+    ]
+  },
+  {
+    "cluster_id": 26,
+    "canonical_news_id": 54505,
+    "news_ids": [
+      54505,
+      1054505
+    ]
+  },
+  {
+    "cluster_id": 27,
+    "canonical_news_id": 54594,
+    "news_ids": [
+      54594,
+      1054594
+    ]
+  },
+  {
+    "cluster_id": 28,
+    "canonical_news_id": 54653,
+    "news_ids": [
+      54653,
+      1054653
+    ]
+  },
+  {
+    "cluster_id": 29,
+    "canonical_news_id": 1054617,
+    "news_ids": [
+      1054617,
+      54617
+    ]
+  },
+  {
+    "cluster_id": 30,
+    "canonical_news_id": 1054572,
+    "news_ids": [
+      1054572,
+      54572
+    ]
+  },
+  {
+    "cluster_id": 31,
+    "canonical_news_id": 54604,
+    "news_ids": [
+      54604,
+      1054604
+    ]
+  },
+  {
+    "cluster_id": 32,
+    "canonical_news_id": 1054289,
+    "news_ids": [
+      1054289,
+      54289
+    ]
+  },
+  {
+    "cluster_id": 33,
+    "canonical_news_id": 1054081,
+    "news_ids": [
+      1054081,
+      1054472,
+      54243,
+      54472,
+      1054206,
+      54565,
+      54111,
+      1054111,
+      54081,
+      1054243,
+      54451,
+      1054490,
+      1054565,
+      1054451,
+      1054425,
+      54490,
+      54206,
+      54425
+    ]
+  },
+  {
+    "cluster_id": 34,
+    "canonical_news_id": 54297,
+    "news_ids": [
+      54297,
+      1054297
+    ]
+  },
+  {
+    "cluster_id": 35,
+    "canonical_news_id": 1054662,
+    "news_ids": [
+      1054662,
+      54662
+    ]
+  },
+  {
+    "cluster_id": 36,
+    "canonical_news_id": 1054284,
+    "news_ids": [
+      1054284,
+      54284
+    ]
+  },
+  {
+    "cluster_id": 37,
+    "canonical_news_id": 1054367,
+    "news_ids": [
+      1054367,
+      54367
+    ]
+  },
+  {
+    "cluster_id": 38,
+    "canonical_news_id": 1054645,
+    "news_ids": [
+      1054645,
+      54645,
+      54655,
+      1054655
+    ]
+  },
+  {
+    "cluster_id": 39,
+    "canonical_news_id": 1054636,
+    "news_ids": [
+      1054636,
+      54636
+    ]
+  },
+  {
+    "cluster_id": 40,
+    "canonical_news_id": 54455,
+    "news_ids": [
+      54455,
+      1054455
+    ]
+  },
+  {
+    "cluster_id": 41,
+    "canonical_news_id": 1054550,
+    "news_ids": [
+      1054550,
+      54550
+    ]
+  },
+  {
+    "cluster_id": 42,
+    "canonical_news_id": 1054528,
+    "news_ids": [
+      1054528
+    ]
+  },
+  {
+    "cluster_id": 43,
+    "canonical_news_id": 54399,
+    "news_ids": [
+      54399,
+      1054399
+    ]
+  },
+  {
+    "cluster_id": 44,
+    "canonical_news_id": 54487,
+    "news_ids": [
+      54487,
+      1054487
+    ]
+  },
+  {
+    "cluster_id": 45,
+    "canonical_news_id": 1054385,
+    "news_ids": [
+      1054385,
+      54385
+    ]
+  },
+  {
+    "cluster_id": 46,
+    "canonical_news_id": 1054595,
+    "news_ids": [
+      1054595,
+      54595
+    ]
+  },
+  {
+    "cluster_id": 47,
+    "canonical_news_id": 1054466,
+    "news_ids": [
+      1054466
+    ]
+  },
+  {
+    "cluster_id": 48,
+    "canonical_news_id": 1054556,
+    "news_ids": [
+      1054556,
+      54556
+    ]
+  },
+  {
+    "cluster_id": 49,
+    "canonical_news_id": 1054592,
+    "news_ids": [
+      1054592,
+      54592
+    ]
+  },
+  {
+    "cluster_id": 50,
+    "canonical_news_id": 54597,
+    "news_ids": [
+      54597,
+      1054597
+    ]
+  },
+  {
+    "cluster_id": 51,
+    "canonical_news_id": 54223,
+    "news_ids": [
+      1054567,
+      54567,
+      54223,
+      1054223
+    ]
+  },
+  {
+    "cluster_id": 52,
+    "canonical_news_id": 54557,
+    "news_ids": [
+      54557
+    ]
+  },
+  {
+    "cluster_id": 53,
+    "canonical_news_id": 1054459,
+    "news_ids": [
+      1054459,
+      54459
+    ]
+  },
+  {
+    "cluster_id": 54,
+    "canonical_news_id": 1054598,
+    "news_ids": [
+      1054598,
+      54598
+    ]
+  },
+  {
+    "cluster_id": 55,
+    "canonical_news_id": 54673,
+    "news_ids": [
+      54673,
+      1054673
+    ]
+  },
+  {
+    "cluster_id": 56,
+    "canonical_news_id": 1054272,
+    "news_ids": [
+      1054272,
+      54272
+    ]
+  },
+  {
+    "cluster_id": 57,
+    "canonical_news_id": 1054090,
+    "news_ids": [
+      1054090,
+      54090
+    ]
+  },
+  {
+    "cluster_id": 58,
+    "canonical_news_id": 1054278,
+    "news_ids": [
+      1054278
+    ]
+  },
+  {
+    "cluster_id": 59,
+    "canonical_news_id": 54231,
+    "news_ids": [
+      54231,
+      1054231
+    ]
+  },
+  {
+    "cluster_id": 60,
+    "canonical_news_id": 1054242,
+    "news_ids": [
+      1054242,
+      54242
+    ]
+  },
+  {
+    "cluster_id": 61,
+    "canonical_news_id": 54301,
+    "news_ids": [
+      54301,
+      1054301
+    ]
+  },
+  {
+    "cluster_id": 62,
+    "canonical_news_id": 1054128,
+    "news_ids": [
+      1054128,
+      54128
+    ]
+  },
+  {
+    "cluster_id": 63,
+    "canonical_news_id": 54469,
+    "news_ids": [
+      54469,
+      1054469
+    ]
+  },
+  {
+    "cluster_id": 64,
+    "canonical_news_id": 1054677,
+    "news_ids": [
+      1054677,
+      54677
+    ]
+  },
+  {
+    "cluster_id": 65,
+    "canonical_news_id": 54448,
+    "news_ids": [
+      54448,
+      1054448
+    ]
+  },
+  {
+    "cluster_id": 66,
+    "canonical_news_id": 54457,
+    "news_ids": [
+      54457,
+      1054457
+    ]
+  },
+  {
+    "cluster_id": 67,
+    "canonical_news_id": 54436,
+    "news_ids": [
+      54436,
+      1054436
+    ]
+  },
+  {
+    "cluster_id": 68,
+    "canonical_news_id": 54176,
+    "news_ids": [
+      54176,
+      1054176
+    ]
+  },
+  {
+    "cluster_id": 69,
+    "canonical_news_id": 1054582,
+    "news_ids": [
+      1054582,
+      54582
+    ]
+  },
+  {
+    "cluster_id": 70,
+    "canonical_news_id": 54438,
+    "news_ids": [
+      54438,
+      1054438
+    ]
+  },
+  {
+    "cluster_id": 71,
+    "canonical_news_id": 1054338,
+    "news_ids": [
+      1054338,
+      54338
+    ]
+  },
+  {
+    "cluster_id": 72,
+    "canonical_news_id": 54106,
+    "news_ids": [
+      54106,
+      1054106
+    ]
+  },
+  {
+    "cluster_id": 73,
+    "canonical_news_id": 1054298,
+    "news_ids": [
+      1054298,
+      54298
+    ]
+  },
+  {
+    "cluster_id": 74,
+    "canonical_news_id": 1054659,
+    "news_ids": [
+      1054659,
+      54659
+    ]
+  },
+  {
+    "cluster_id": 75,
+    "canonical_news_id": 1054327,
+    "news_ids": [
+      1054327,
+      54327
+    ]
+  },
+  {
+    "cluster_id": 76,
+    "canonical_news_id": 54568,
+    "news_ids": [
+      54568
+    ]
+  },
+  {
+    "cluster_id": 77,
+    "canonical_news_id": 54240,
+    "news_ids": [
+      54240,
+      1054240
+    ]
+  },
+  {
+    "cluster_id": 78,
+    "canonical_news_id": 54218,
+    "news_ids": [
+      54218,
+      1054218
+    ]
+  },
+  {
+    "cluster_id": 79,
+    "canonical_news_id": 54562,
+    "news_ids": [
+      54562,
+      1054562
+    ]
+  },
+  {
+    "cluster_id": 80,
+    "canonical_news_id": 54191,
+    "news_ids": [
+      1054285,
+      54191,
+      54406,
+      1054238,
+      54445,
+      1054265,
+      54259,
+      1054191,
+      1054406,
+      54265,
+      54285,
+      1054445,
+      54238
+    ]
+  },
+  {
+    "cluster_id": 81,
+    "canonical_news_id": 1054232,
+    "news_ids": [
+      1054232
+    ]
+  },
+  {
+    "cluster_id": 82,
+    "canonical_news_id": 1054558,
+    "news_ids": [
+      1054558,
+      54558
+    ]
+  },
+  {
+    "cluster_id": 83,
+    "canonical_news_id": 54278,
+    "news_ids": [
+      54278
+    ]
+  },
+  {
+    "cluster_id": 84,
+    "canonical_news_id": 1054566,
+    "news_ids": [
+      1054566,
+      54566,
+      54646,
+      1054646
+    ]
+  },
+  {
+    "cluster_id": 85,
+    "canonical_news_id": 1054310,
+    "news_ids": [
+      1054310,
+      54310
+    ]
+  },
+  {
+    "cluster_id": 86,
+    "canonical_news_id": 54153,
+    "news_ids": [
+      54241,
+      54153,
+      1054241,
+      1054153
+    ]
+  },
+  {
+    "cluster_id": 87,
+    "canonical_news_id": 54439,
+    "news_ids": [
+      54439,
+      1054439
+    ]
+  },
+  {
+    "cluster_id": 88,
+    "canonical_news_id": 54249,
+    "news_ids": [
+      54249,
+      1054249
+    ]
+  },
+  {
+    "cluster_id": 89,
+    "canonical_news_id": 1054345,
+    "news_ids": [
+      1054345
+    ]
+  },
+  {
+    "cluster_id": 90,
+    "canonical_news_id": 54236,
+    "news_ids": [
+      54236,
+      1054236
+    ]
+  },
+  {
+    "cluster_id": 91,
+    "canonical_news_id": 1054346,
+    "news_ids": [
+      1054346,
+      54346
+    ]
+  },
+  {
+    "cluster_id": 92,
+    "canonical_news_id": 54378,
+    "news_ids": [
+      54378,
+      1054378
+    ]
+  },
+  {
+    "cluster_id": 93,
+    "canonical_news_id": 1054591,
+    "news_ids": [
+      1054591,
+      54591
+    ]
+  },
+  {
+    "cluster_id": 94,
+    "canonical_news_id": 54671,
+    "news_ids": [
+      54671,
+      1054671
+    ]
+  },
+  {
+    "cluster_id": 95,
+    "canonical_news_id": 54481,
+    "news_ids": [
+      54481,
+      1054481
+    ]
+  },
+  {
+    "cluster_id": 96,
+    "canonical_news_id": 1054542,
+    "news_ids": [
+      1054542,
+      54542
+    ]
+  },
+  {
+    "cluster_id": 97,
+    "canonical_news_id": 54384,
+    "news_ids": [
+      54384,
+      1054384
+    ]
+  },
+  {
+    "cluster_id": 98,
+    "canonical_news_id": 54331,
+    "news_ids": [
+      54331,
+      1054331,
+      1054292,
+      54292
+    ]
+  },
+  {
+    "cluster_id": 99,
+    "canonical_news_id": 54269,
+    "news_ids": [
+      54269,
+      1054269
+    ]
+  },
+  {
+    "cluster_id": 100,
+    "canonical_news_id": 54305,
+    "news_ids": [
+      54305,
+      1054305
+    ]
+  },
+  {
+    "cluster_id": 101,
+    "canonical_news_id": 1054326,
+    "news_ids": [
+      1054326,
+      54326
+    ]
+  },
+  {
+    "cluster_id": 102,
+    "canonical_news_id": 54089,
+    "news_ids": [
+      54089,
+      1054089
+    ]
+  },
+  {
+    "cluster_id": 103,
+    "canonical_news_id": 54336,
+    "news_ids": [
+      54336,
+      1054336
+    ]
+  },
+  {
+    "cluster_id": 104,
+    "canonical_news_id": 1054586,
+    "news_ids": [
+      1054586,
+      54586
+    ]
+  },
+  {
+    "cluster_id": 105,
+    "canonical_news_id": 1054637,
+    "news_ids": [
+      1054637,
+      54637
+    ]
+  },
+  {
+    "cluster_id": 106,
+    "canonical_news_id": 1054394,
+    "news_ids": [
+      1054394,
+      54394
+    ]
+  },
+  {
+    "cluster_id": 107,
+    "canonical_news_id": 54492,
+    "news_ids": [
+      54492,
+      1054492
+    ]
+  },
+  {
+    "cluster_id": 108,
+    "canonical_news_id": 54318,
+    "news_ids": [
+      54318,
+      1054318
+    ]
+  },
+  {
+    "cluster_id": 109,
+    "canonical_news_id": 54400,
+    "news_ids": [
+      54400,
+      1054672,
+      1054400,
+      54672
+    ]
+  },
+  {
+    "cluster_id": 110,
+    "canonical_news_id": 1054402,
+    "news_ids": [
+      1054402
+    ]
+  },
+  {
+    "cluster_id": 111,
+    "canonical_news_id": 54447,
+    "news_ids": [
+      54447,
+      1054447
+    ]
+  },
+  {
+    "cluster_id": 112,
+    "canonical_news_id": 1054601,
+    "news_ids": [
+      1054601,
+      54601
+    ]
+  },
+  {
+    "cluster_id": 113,
+    "canonical_news_id": 1054634,
+    "news_ids": [
+      1054634
+    ]
+  },
+  {
+    "cluster_id": 114,
+    "canonical_news_id": 54208,
+    "news_ids": [
+      54208
+    ]
+  },
+  {
+    "cluster_id": 115,
+    "canonical_news_id": 54432,
+    "news_ids": [
+      54432,
+      1054432
+    ]
+  },
+  {
+    "cluster_id": 116,
+    "canonical_news_id": 54322,
+    "news_ids": [
+      54322,
+      1054322
+    ]
+  },
+  {
+    "cluster_id": 117,
+    "canonical_news_id": 1054222,
+    "news_ids": [
+      1054222,
+      54222
+    ]
+  },
+  {
+    "cluster_id": 118,
+    "canonical_news_id": 1054407,
+    "news_ids": [
+      1054407,
+      54407
+    ]
+  },
+  {
+    "cluster_id": 119,
+    "canonical_news_id": 54226,
+    "news_ids": [
+      54226,
+      1054226
+    ]
+  },
+  {
+    "cluster_id": 120,
+    "canonical_news_id": 1054122,
+    "news_ids": [
+      1054122,
+      54122
+    ]
+  },
+  {
+    "cluster_id": 121,
+    "canonical_news_id": 54287,
+    "news_ids": [
+      54287,
+      1054287
+    ]
+  },
+  {
+    "cluster_id": 122,
+    "canonical_news_id": 1054294,
+    "news_ids": [
+      1054294,
+      54294
+    ]
+  },
+  {
+    "cluster_id": 123,
+    "canonical_news_id": 54343,
+    "news_ids": [
+      54343,
+      1054343
+    ]
+  },
+  {
+    "cluster_id": 124,
+    "canonical_news_id": 1054366,
+    "news_ids": [
+      1054366
+    ]
+  },
+  {
+    "cluster_id": 125,
+    "canonical_news_id": 1054220,
+    "news_ids": [
+      1054220,
+      54220
+    ]
+  },
+  {
+    "cluster_id": 126,
+    "canonical_news_id": 54126,
+    "news_ids": [
+      54126,
+      1054126
+    ]
+  },
+  {
+    "cluster_id": 127,
+    "canonical_news_id": 1054603,
+    "news_ids": [
+      1054603,
+      54603
+    ]
+  },
+  {
+    "cluster_id": 128,
+    "canonical_news_id": 1054427,
+    "news_ids": [
+      1054427
+    ]
+  },
+  {
+    "cluster_id": 129,
+    "canonical_news_id": 54257,
+    "news_ids": [
+      54257,
+      1054257
+    ]
+  },
+  {
+    "cluster_id": 130,
+    "canonical_news_id": 54610,
+    "news_ids": [
+      54610,
+      1054610
+    ]
+  },
+  {
+    "cluster_id": 131,
+    "canonical_news_id": 1054649,
+    "news_ids": [
+      54660,
+      1054649,
+      54649,
+      1054660
+    ]
+  },
+  {
+    "cluster_id": 132,
+    "canonical_news_id": 1054440,
+    "news_ids": [
+      1054440,
+      54440
+    ]
+  },
+  {
+    "cluster_id": 133,
+    "canonical_news_id": 54415,
+    "news_ids": [
+      54415,
+      1054415
+    ]
+  },
+  {
+    "cluster_id": 134,
+    "canonical_news_id": 54596,
+    "news_ids": [
+      54596,
+      1054596
+    ]
+  },
+  {
+    "cluster_id": 135,
+    "canonical_news_id": 54426,
+    "news_ids": [
+      54426,
+      1054426
+    ]
+  },
+  {
+    "cluster_id": 136,
+    "canonical_news_id": 54264,
+    "news_ids": [
+      54264,
+      1054264
+    ]
+  },
+  {
+    "cluster_id": 137,
+    "canonical_news_id": 54536,
+    "news_ids": [
+      54536,
+      1054536
+    ]
+  },
+  {
+    "cluster_id": 138,
+    "canonical_news_id": 1054355,
+    "news_ids": [
+      1054355,
+      54355
+    ]
+  },
+  {
+    "cluster_id": 139,
+    "canonical_news_id": 1054409,
+    "news_ids": [
+      1054409,
+      54409
+    ]
+  },
+  {
+    "cluster_id": 140,
+    "canonical_news_id": 54363,
+    "news_ids": [
+      54363,
+      1054363
+    ]
+  },
+  {
+    "cluster_id": 141,
+    "canonical_news_id": 54332,
+    "news_ids": [
+      54332,
+      1054332
+    ]
+  },
+  {
+    "cluster_id": 142,
+    "canonical_news_id": 1054449,
+    "news_ids": [
+      1054449,
+      54449
+    ]
+  },
+  {
+    "cluster_id": 143,
+    "canonical_news_id": 1054102,
+    "news_ids": [
+      1054102,
+      54102
+    ]
+  },
+  {
+    "cluster_id": 144,
+    "canonical_news_id": 54199,
+    "news_ids": [
+      54199
+    ]
+  },
+  {
+    "cluster_id": 145,
+    "canonical_news_id": 1054341,
+    "news_ids": [
+      1054341,
+      54341
+    ]
+  },
+  {
+    "cluster_id": 146,
+    "canonical_news_id": 54219,
+    "news_ids": [
+      54219,
+      1054219
+    ]
+  },
+  {
+    "cluster_id": 147,
+    "canonical_news_id": 1054523,
+    "news_ids": [
+      1054523,
+      54523
+    ]
+  },
+  {
+    "cluster_id": 148,
+    "canonical_news_id": 1054361,
+    "news_ids": [
+      1054361,
+      54361
+    ]
+  },
+  {
+    "cluster_id": 149,
+    "canonical_news_id": 54433,
+    "news_ids": [
+      54433,
+      1054433
+    ]
+  },
+  {
+    "cluster_id": 150,
+    "canonical_news_id": 54471,
+    "news_ids": [
+      54471,
+      1054471
+    ]
+  },
+  {
+    "cluster_id": 151,
+    "canonical_news_id": 54376,
+    "news_ids": [
+      54376,
+      1054376
+    ]
+  },
+  {
+    "cluster_id": 152,
+    "canonical_news_id": 1054314,
+    "news_ids": [
+      1054314,
+      54314
+    ]
+  },
+  {
+    "cluster_id": 153,
+    "canonical_news_id": 1054435,
+    "news_ids": [
+      1054435,
+      54435
+    ]
+  },
+  {
+    "cluster_id": 154,
+    "canonical_news_id": 1054194,
+    "news_ids": [
+      1054194,
+      54194
+    ]
+  },
+  {
+    "cluster_id": 155,
+    "canonical_news_id": 1054229,
+    "news_ids": [
+      1054229,
+      54229
+    ]
+  },
+  {
+    "cluster_id": 156,
+    "canonical_news_id": 54379,
+    "news_ids": [
+      54379,
+      1054379
+    ]
+  },
+  {
+    "cluster_id": 157,
+    "canonical_news_id": 54419,
+    "news_ids": [
+      54419,
+      1054419
+    ]
+  },
+  {
+    "cluster_id": 158,
+    "canonical_news_id": 54467,
+    "news_ids": [
+      54467,
+      1054467
+    ]
+  },
+  {
+    "cluster_id": 159,
+    "canonical_news_id": 54308,
+    "news_ids": [
+      54308
+    ]
+  },
+  {
+    "cluster_id": 160,
+    "canonical_news_id": 54164,
+    "news_ids": [
+      54164,
+      1054164
+    ]
+  },
+  {
+    "cluster_id": 161,
+    "canonical_news_id": 54522,
+    "news_ids": [
+      54522,
+      1054522
+    ]
+  },
+  {
+    "cluster_id": 162,
+    "canonical_news_id": 1054578,
+    "news_ids": [
+      1054578,
+      54578
+    ]
+  },
+  {
+    "cluster_id": 163,
+    "canonical_news_id": 1054317,
+    "news_ids": [
+      1054317
+    ]
+  },
+  {
+    "cluster_id": 164,
+    "canonical_news_id": 1054499,
+    "news_ids": [
+      1054497,
+      1054499,
+      54499,
+      54497
+    ]
+  },
+  {
+    "cluster_id": 165,
+    "canonical_news_id": 1054616,
+    "news_ids": [
+      1054616
+    ]
+  },
+  {
+    "cluster_id": 166,
+    "canonical_news_id": 1054266,
+    "news_ids": [
+      1054266,
+      54266
+    ]
+  },
+  {
+    "cluster_id": 167,
+    "canonical_news_id": 1054354,
+    "news_ids": [
+      1054354,
+      54354
+    ]
+  },
+  {
+    "cluster_id": 168,
+    "canonical_news_id": 54620,
+    "news_ids": [
+      54620
+    ]
+  },
+  {
+    "cluster_id": 169,
+    "canonical_news_id": 54561,
+    "news_ids": [
+      54561,
+      1054561
+    ]
+  },
+  {
+    "cluster_id": 170,
+    "canonical_news_id": 1054510,
+    "news_ids": [
+      1054510,
+      54510
+    ]
+  },
+  {
+    "cluster_id": 171,
+    "canonical_news_id": 1054267,
+    "news_ids": [
+      1054267,
+      54267
+    ]
+  },
+  {
+    "cluster_id": 172,
+    "canonical_news_id": 54388,
+    "news_ids": [
+      54388,
+      1054388
+    ]
+  },
+  {
+    "cluster_id": 173,
+    "canonical_news_id": 54317,
+    "news_ids": [
+      54317
+    ]
+  },
+  {
+    "cluster_id": 174,
+    "canonical_news_id": 54607,
+    "news_ids": [
+      54607,
+      1054607
+    ]
+  },
+  {
+    "cluster_id": 175,
+    "canonical_news_id": 54623,
+    "news_ids": [
+      54623
+    ]
+  },
+  {
+    "cluster_id": 176,
+    "canonical_news_id": 54362,
+    "news_ids": [
+      54362,
+      1054362
+    ]
+  },
+  {
+    "cluster_id": 177,
+    "canonical_news_id": 1054295,
+    "news_ids": [
+      1054295
+    ]
+  },
+  {
+    "cluster_id": 178,
+    "canonical_news_id": 1054648,
+    "news_ids": [
+      1054648
+    ]
+  },
+  {
+    "cluster_id": 179,
+    "canonical_news_id": 1054124,
+    "news_ids": [
+      1054124,
+      54124
+    ]
+  },
+  {
+    "cluster_id": 180,
+    "canonical_news_id": 54358,
+    "news_ids": [
+      54358,
+      1054358
+    ]
+  },
+  {
+    "cluster_id": 181,
+    "canonical_news_id": 54418,
+    "news_ids": [
+      54418,
+      1054418
+    ]
+  },
+  {
+    "cluster_id": 182,
+    "canonical_news_id": 1054104,
+    "news_ids": [
+      1054104,
+      54104
+    ]
+  },
+  {
+    "cluster_id": 183,
+    "canonical_news_id": 54348,
+    "news_ids": [
+      54348,
+      1054348,
+      54552,
+      1054552
+    ]
+  },
+  {
+    "cluster_id": 184,
+    "canonical_news_id": 54380,
+    "news_ids": [
+      54380
+    ]
+  },
+  {
+    "cluster_id": 185,
+    "canonical_news_id": 54232,
+    "news_ids": [
+      54232
+    ]
+  },
+  {
+    "cluster_id": 186,
+    "canonical_news_id": 54371,
+    "news_ids": [
+      54371,
+      1054371
+    ]
+  },
+  {
+    "cluster_id": 187,
+    "canonical_news_id": 1054665,
+    "news_ids": [
+      1054665,
+      54665
+    ]
+  },
+  {
+    "cluster_id": 188,
+    "canonical_news_id": 54443,
+    "news_ids": [
+      54443,
+      1054443
+    ]
+  },
+  {
+    "cluster_id": 189,
+    "canonical_news_id": 1054319,
+    "news_ids": [
+      1054319,
+      54319
+    ]
+  },
+  {
+    "cluster_id": 190,
+    "canonical_news_id": 54401,
+    "news_ids": [
+      54401,
+      1054401
+    ]
+  },
+  {
+    "cluster_id": 191,
+    "canonical_news_id": 1054328,
+    "news_ids": [
+      1054328,
+      54328
+    ]
+  },
+  {
+    "cluster_id": 192,
+    "canonical_news_id": 54293,
+    "news_ids": [
+      54293,
+      1054293
+    ]
+  },
+  {
+    "cluster_id": 193,
+    "canonical_news_id": 1054364,
+    "news_ids": [
+      1054364,
+      54364
+    ]
+  },
+  {
+    "cluster_id": 194,
+    "canonical_news_id": 1054261,
+    "news_ids": [
+      1054261,
+      54261
+    ]
+  },
+  {
+    "cluster_id": 195,
+    "canonical_news_id": 1054494,
+    "news_ids": [
+      1054494,
+      54494
+    ]
+  },
+  {
+    "cluster_id": 196,
+    "canonical_news_id": 54627,
+    "news_ids": [
+      54627
+    ]
+  },
+  {
+    "cluster_id": 197,
+    "canonical_news_id": 54656,
+    "news_ids": [
+      54656,
+      1054656
+    ]
+  },
+  {
+    "cluster_id": 198,
+    "canonical_news_id": 54291,
+    "news_ids": [
+      54291,
+      1054291
+    ]
+  },
+  {
+    "cluster_id": 199,
+    "canonical_news_id": 1054274,
+    "news_ids": [
+      1054274,
+      54270,
+      54274,
+      1054270
+    ]
+  },
+  {
+    "cluster_id": 200,
+    "canonical_news_id": 54518,
+    "news_ids": [
+      54518,
+      1054518
+    ]
+  },
+  {
+    "cluster_id": 201,
+    "canonical_news_id": 54103,
+    "news_ids": [
+      54103,
+      1054103
+    ]
+  },
+  {
+    "cluster_id": 202,
+    "canonical_news_id": 54468,
+    "news_ids": [
+      54468,
+      1054468
+    ]
+  },
+  {
+    "cluster_id": 203,
+    "canonical_news_id": 1054593,
+    "news_ids": [
+      1054593,
+      54593
+    ]
+  },
+  {
+    "cluster_id": 204,
+    "canonical_news_id": 54668,
+    "news_ids": [
+      54668,
+      1054668
+    ]
+  },
+  {
+    "cluster_id": 205,
+    "canonical_news_id": 1054142,
+    "news_ids": [
+      1054142
+    ]
+  },
+  {
+    "cluster_id": 206,
+    "canonical_news_id": 54589,
+    "news_ids": [
+      54589,
+      1054589
+    ]
+  },
+  {
+    "cluster_id": 207,
+    "canonical_news_id": 54290,
+    "news_ids": [
+      54290,
+      1054290
+    ]
+  },
+  {
+    "cluster_id": 208,
+    "canonical_news_id": 54424,
+    "news_ids": [
+      54424,
+      1054424
+    ]
+  },
+  {
+    "cluster_id": 209,
+    "canonical_news_id": 1054159,
+    "news_ids": [
+      1054159,
+      54159
+    ]
+  },
+  {
+    "cluster_id": 210,
+    "canonical_news_id": 1054369,
+    "news_ids": [
+      1054369
+    ]
+  },
+  {
+    "cluster_id": 211,
+    "canonical_news_id": 54182,
+    "news_ids": [
+      54544,
+      1054544,
+      54182,
+      1054182
+    ]
+  },
+  {
+    "cluster_id": 212,
+    "canonical_news_id": 54183,
+    "news_ids": [
+      54183,
+      1054183
+    ]
+  },
+  {
+    "cluster_id": 213,
+    "canonical_news_id": 54616,
+    "news_ids": [
+      54616
+    ]
+  },
+  {
+    "cluster_id": 214,
+    "canonical_news_id": 1054359,
+    "news_ids": [
+      1054359,
+      54359
+    ]
+  },
+  {
+    "cluster_id": 215,
+    "canonical_news_id": 1054529,
+    "news_ids": [
+      1054529,
+      54529
+    ]
+  },
+  {
+    "cluster_id": 216,
+    "canonical_news_id": 54125,
+    "news_ids": [
+      54125,
+      1054125
+    ]
+  },
+  {
+    "cluster_id": 217,
+    "canonical_news_id": 54605,
+    "news_ids": [
+      54605,
+      1054605
+    ]
+  },
+  {
+    "cluster_id": 218,
+    "canonical_news_id": 1054434,
+    "news_ids": [
+      1054434,
+      54434
+    ]
+  },
+  {
+    "cluster_id": 219,
+    "canonical_news_id": 1054663,
+    "news_ids": [
+      1054663,
+      54663
+    ]
+  },
+  {
+    "cluster_id": 220,
+    "canonical_news_id": 54224,
+    "news_ids": [
+      54224,
+      1054224
+    ]
+  },
+  {
+    "cluster_id": 221,
+    "canonical_news_id": 1054195,
+    "news_ids": [
+      1054195,
+      54195
+    ]
+  },
+  {
+    "cluster_id": 222,
+    "canonical_news_id": 54307,
+    "news_ids": [
+      54307,
+      1054307
+    ]
+  },
+  {
+    "cluster_id": 223,
+    "canonical_news_id": 1054574,
+    "news_ids": [
+      1054574,
+      54574
+    ]
+  },
+  {
+    "cluster_id": 224,
+    "canonical_news_id": 1054613,
+    "news_ids": [
+      1054613,
+      54613
+    ]
+  },
+  {
+    "cluster_id": 225,
+    "canonical_news_id": 54334,
+    "news_ids": [
+      54334,
+      1054334
+    ]
+  },
+  {
+    "cluster_id": 226,
+    "canonical_news_id": 1054225,
+    "news_ids": [
+      1054225,
+      54225
+    ]
+  },
+  {
+    "cluster_id": 227,
+    "canonical_news_id": 1054504,
+    "news_ids": [
+      1054504,
+      54504
+    ]
+  },
+  {
+    "cluster_id": 228,
+    "canonical_news_id": 1054483,
+    "news_ids": [
+      1054483,
+      54483
+    ]
+  },
+  {
+    "cluster_id": 229,
+    "canonical_news_id": 54193,
+    "news_ids": [
+      54193,
+      1054193
+    ]
+  },
+  {
+    "cluster_id": 230,
+    "canonical_news_id": 1054441,
+    "news_ids": [
+      1054441,
+      54441
+    ]
+  },
+  {
+    "cluster_id": 231,
+    "canonical_news_id": 1054627,
+    "news_ids": [
+      1054627
+    ]
+  },
+  {
+    "cluster_id": 232,
+    "canonical_news_id": 54339,
+    "news_ids": [
+      54339
+    ]
+  },
+  {
+    "cluster_id": 233,
+    "canonical_news_id": 54553,
+    "news_ids": [
+      54553,
+      1054553
+    ]
+  },
+  {
+    "cluster_id": 234,
+    "canonical_news_id": 1054652,
+    "news_ids": [
+      1054652,
+      54652
+    ]
+  },
+  {
+    "cluster_id": 235,
+    "canonical_news_id": 1054312,
+    "news_ids": [
+      1054312,
+      54312
+    ]
+  },
+  {
+    "cluster_id": 236,
+    "canonical_news_id": 1054175,
+    "news_ids": [
+      1054175,
+      54175
+    ]
+  },
+  {
+    "cluster_id": 237,
+    "canonical_news_id": 1054463,
+    "news_ids": [
+      1054463,
+      54463
+    ]
+  },
+  {
+    "cluster_id": 238,
+    "canonical_news_id": 1054252,
+    "news_ids": [
+      1054252,
+      54252
+    ]
+  },
+  {
+    "cluster_id": 239,
+    "canonical_news_id": 1054380,
+    "news_ids": [
+      1054380
+    ]
+  },
+  {
+    "cluster_id": 240,
+    "canonical_news_id": 54466,
+    "news_ids": [
+      54466
+    ]
+  },
+  {
+    "cluster_id": 241,
+    "canonical_news_id": 1054548,
+    "news_ids": [
+      1054548,
+      54548
+    ]
+  },
+  {
+    "cluster_id": 242,
+    "canonical_news_id": 54528,
+    "news_ids": [
+      54528
+    ]
+  },
+  {
+    "cluster_id": 243,
+    "canonical_news_id": 1054477,
+    "news_ids": [
+      1054477,
+      54477
+    ]
+  },
+  {
+    "cluster_id": 244,
+    "canonical_news_id": 1054669,
+    "news_ids": [
+      1054669,
+      54669
+    ]
+  },
+  {
+    "cluster_id": 245,
+    "canonical_news_id": 1054387,
+    "news_ids": [
+      1054387,
+      54387
+    ]
+  },
+  {
+    "cluster_id": 246,
+    "canonical_news_id": 54286,
+    "news_ids": [
+      54286,
+      1054286
+    ]
+  },
+  {
+    "cluster_id": 247,
+    "canonical_news_id": 1054612,
+    "news_ids": [
+      1054612,
+      54612
+    ]
+  },
+  {
+    "cluster_id": 248,
+    "canonical_news_id": 54382,
+    "news_ids": [
+      54382,
+      1054382
+    ]
+  },
+  {
+    "cluster_id": 249,
+    "canonical_news_id": 1054097,
+    "news_ids": [
+      1054097,
+      54097
+    ]
+  },
+  {
+    "cluster_id": 250,
+    "canonical_news_id": 54509,
+    "news_ids": [
+      54509,
+      1054509
+    ]
+  },
+  {
+    "cluster_id": 251,
+    "canonical_news_id": 54427,
+    "news_ids": [
+      54427
+    ]
+  },
+  {
+    "cluster_id": 252,
+    "canonical_news_id": 54634,
+    "news_ids": [
+      54634
+    ]
+  },
+  {
+    "cluster_id": 253,
+    "canonical_news_id": 54411,
+    "news_ids": [
+      54411,
+      1054411
+    ]
+  },
+  {
+    "cluster_id": 254,
+    "canonical_news_id": 54674,
+    "news_ids": [
+      54674,
+      1054674
+    ]
+  },
+  {
+    "cluster_id": 255,
+    "canonical_news_id": 1054533,
+    "news_ids": [
+      1054533,
+      54533
+    ]
+  },
+  {
+    "cluster_id": 256,
+    "canonical_news_id": 54618,
+    "news_ids": [
+      54618
+    ]
+  },
+  {
+    "cluster_id": 257,
+    "canonical_news_id": 54228,
+    "news_ids": [
+      54228,
+      1054228
+    ]
+  },
+  {
+    "cluster_id": 258,
+    "canonical_news_id": 54470,
+    "news_ids": [
+      54470,
+      1054470
+    ]
+  },
+  {
+    "cluster_id": 259,
+    "canonical_news_id": 54402,
+    "news_ids": [
+      54402
+    ]
+  },
+  {
+    "cluster_id": 260,
+    "canonical_news_id": 54320,
+    "news_ids": [
+      54320,
+      1054320
+    ]
+  },
+  {
+    "cluster_id": 261,
+    "canonical_news_id": 1054661,
+    "news_ids": [
+      1054661,
+      54661
+    ]
+  },
+  {
+    "cluster_id": 262,
+    "canonical_news_id": 54283,
+    "news_ids": [
+      54283
+    ]
+  },
+  {
+    "cluster_id": 263,
+    "canonical_news_id": 54296,
+    "news_ids": [
+      54296,
+      1054296
+    ]
+  },
+  {
+    "cluster_id": 264,
+    "canonical_news_id": 1054501,
+    "news_ids": [
+      1054501,
+      54501
+    ]
+  },
+  {
+    "cluster_id": 265,
+    "canonical_news_id": 1054568,
+    "news_ids": [
+      1054568
+    ]
+  },
+  {
+    "cluster_id": 266,
+    "canonical_news_id": 54398,
+    "news_ids": [
+      54398,
+      1054398
+    ]
+  },
+  {
+    "cluster_id": 267,
+    "canonical_news_id": 54682,
+    "news_ids": [
+      54682,
+      1054682
+    ]
+  },
+  {
+    "cluster_id": 268,
+    "canonical_news_id": 1054365,
+    "news_ids": [
+      1054365,
+      54365
+    ]
+  },
+  {
+    "cluster_id": 269,
+    "canonical_news_id": 54099,
+    "news_ids": [
+      54099,
+      1054099
+    ]
+  },
+  {
+    "cluster_id": 270,
+    "canonical_news_id": 1054563,
+    "news_ids": [
+      1054563
+    ]
+  },
+  {
+    "cluster_id": 271,
+    "canonical_news_id": 1054551,
+    "news_ids": [
+      1054551,
+      54551
+    ]
+  },
+  {
+    "cluster_id": 272,
+    "canonical_news_id": 1054511,
+    "news_ids": [
+      1054517,
+      1054559,
+      1054511,
+      54559,
+      54517,
+      54511
+    ]
+  },
+  {
+    "cluster_id": 273,
+    "canonical_news_id": 54300,
+    "news_ids": [
+      54300,
+      1054300
+    ]
+  },
+  {
+    "cluster_id": 274,
+    "canonical_news_id": 1054248,
+    "news_ids": [
+      1054248,
+      54248
+    ]
+  },
+  {
+    "cluster_id": 275,
+    "canonical_news_id": 54502,
+    "news_ids": [
+      54502,
+      1054502
+    ]
+  },
+  {
+    "cluster_id": 276,
+    "canonical_news_id": 1054638,
+    "news_ids": [
+      1054638,
+      54638
+    ]
+  },
+  {
+    "cluster_id": 277,
+    "canonical_news_id": 54408,
+    "news_ids": [
+      54408,
+      1054408
+    ]
+  },
+  {
+    "cluster_id": 278,
+    "canonical_news_id": 54520,
+    "news_ids": [
+      54520,
+      1054520
+    ]
+  },
+  {
+    "cluster_id": 279,
+    "canonical_news_id": 1054342,
+    "news_ids": [
+      1054342
+    ]
+  },
+  {
+    "cluster_id": 280,
+    "canonical_news_id": 1054360,
+    "news_ids": [
+      1054360,
+      54360
+    ]
+  },
+  {
+    "cluster_id": 281,
+    "canonical_news_id": 54639,
+    "news_ids": [
+      54639,
+      1054639
+    ]
+  },
+  {
+    "cluster_id": 282,
+    "canonical_news_id": 54088,
+    "news_ids": [
+      54088,
+      1054088
+    ]
+  },
+  {
+    "cluster_id": 283,
+    "canonical_news_id": 54600,
+    "news_ids": [
+      54600,
+      1054600
+    ]
+  },
+  {
+    "cluster_id": 284,
+    "canonical_news_id": 54512,
+    "news_ids": [
+      54512,
+      1054512
+    ]
+  },
+  {
+    "cluster_id": 285,
+    "canonical_news_id": 1054557,
+    "news_ids": [
+      1054557
+    ]
+  },
+  {
+    "cluster_id": 286,
+    "canonical_news_id": 1054323,
+    "news_ids": [
+      1054323,
+      54323
+    ]
+  },
+  {
+    "cluster_id": 287,
+    "canonical_news_id": 54144,
+    "news_ids": [
+      54144,
+      1054144
+    ]
+  },
+  {
+    "cluster_id": 288,
+    "canonical_news_id": 54563,
+    "news_ids": [
+      54563
+    ]
+  },
+  {
+    "cluster_id": 289,
+    "canonical_news_id": 1054148,
+    "news_ids": [
+      1054148,
+      54148
+    ]
+  },
+  {
+    "cluster_id": 290,
+    "canonical_news_id": 1054575,
+    "news_ids": [
+      1054575,
+      54575
+    ]
+  },
+  {
+    "cluster_id": 291,
+    "canonical_news_id": 54541,
+    "news_ids": [
+      54541,
+      1054541
+    ]
+  },
+  {
+    "cluster_id": 292,
+    "canonical_news_id": 54580,
+    "news_ids": [
+      54580,
+      1054580
+    ]
+  },
+  {
+    "cluster_id": 293,
+    "canonical_news_id": 54423,
+    "news_ids": [
+      54423
+    ]
+  },
+  {
+    "cluster_id": 294,
+    "canonical_news_id": 54087,
+    "news_ids": [
+      54087
+    ]
+  },
+  {
+    "cluster_id": 295,
+    "canonical_news_id": 1054107,
+    "news_ids": [
+      1054107,
+      54107
+    ]
+  },
+  {
+    "cluster_id": 296,
+    "canonical_news_id": 1054302,
+    "news_ids": [
+      1054302,
+      54302
+    ]
+  },
+  {
+    "cluster_id": 297,
+    "canonical_news_id": 1054397,
+    "news_ids": [
+      1054397,
+      54397
+    ]
+  },
+  {
+    "cluster_id": 298,
+    "canonical_news_id": 54635,
+    "news_ids": [
+      54635,
+      1054635
+    ]
+  },
+  {
+    "cluster_id": 299,
+    "canonical_news_id": 1054590,
+    "news_ids": [
+      1054590,
+      54590
+    ]
+  },
+  {
+    "cluster_id": 300,
+    "canonical_news_id": 54619,
+    "news_ids": [
+      54619,
+      1054619
+    ]
+  },
+  {
+    "cluster_id": 301,
+    "canonical_news_id": 1054185,
+    "news_ids": [
+      1054185,
+      54185
+    ]
+  },
+  {
+    "cluster_id": 302,
+    "canonical_news_id": 1054313,
+    "news_ids": [
+      1054313,
+      54313
+    ]
+  },
+  {
+    "cluster_id": 303,
+    "canonical_news_id": 1054315,
+    "news_ids": [
+      1054315,
+      54315
+    ]
+  },
+  {
+    "cluster_id": 304,
+    "canonical_news_id": 1054349,
+    "news_ids": [
+      1054349,
+      54349
+    ]
+  },
+  {
+    "cluster_id": 305,
+    "canonical_news_id": 1054454,
+    "news_ids": [
+      1054454,
+      54454
+    ]
+  },
+  {
+    "cluster_id": 306,
+    "canonical_news_id": 54246,
+    "news_ids": [
+      54246,
+      1054246
+    ]
+  },
+  {
+    "cluster_id": 307,
+    "canonical_news_id": 1054254,
+    "news_ids": [
+      54479,
+      1054254,
+      54254
+    ]
+  },
+  {
+    "cluster_id": 308,
+    "canonical_news_id": 54521,
+    "news_ids": [
+      54521,
+      1054521
+    ]
+  },
+  {
+    "cluster_id": 309,
+    "canonical_news_id": 1054412,
+    "news_ids": [
+      1054412,
+      54412
+    ]
+  },
+  {
+    "cluster_id": 310,
+    "canonical_news_id": 1052940,
+    "news_ids": [
+      1052940,
+      52940
+    ]
+  },
+  {
+    "cluster_id": 311,
+    "canonical_news_id": 1054121,
+    "news_ids": [
+      1054121,
+      54121
+    ]
+  },
+  {
+    "cluster_id": 312,
+    "canonical_news_id": 54352,
+    "news_ids": [
+      54352,
+      1054352
+    ]
+  },
+  {
+    "cluster_id": 313,
+    "canonical_news_id": 1054623,
+    "news_ids": [
+      1054623
+    ]
+  },
+  {
+    "cluster_id": 314,
+    "canonical_news_id": 1054606,
+    "news_ids": [
+      1054606,
+      54606
+    ]
+  },
+  {
+    "cluster_id": 315,
+    "canonical_news_id": 1054086,
+    "news_ids": [
+      1054086,
+      54086
+    ]
+  },
+  {
+    "cluster_id": 316,
+    "canonical_news_id": 54452,
+    "news_ids": [
+      54452,
+      1054452
+    ]
+  },
+  {
+    "cluster_id": 317,
+    "canonical_news_id": 1054330,
+    "news_ids": [
+      1054330,
+      54330
+    ]
+  },
+  {
+    "cluster_id": 318,
+    "canonical_news_id": 54422,
+    "news_ids": [
+      54422,
+      1054422
+    ]
+  },
+  {
+    "cluster_id": 319,
+    "canonical_news_id": 1054420,
+    "news_ids": [
+      1054420,
+      54420
+    ]
+  },
+  {
+    "cluster_id": 320,
+    "canonical_news_id": 54381,
+    "news_ids": [
+      54381,
+      1054381
+    ]
+  },
+  {
+    "cluster_id": 321,
+    "canonical_news_id": 54368,
+    "news_ids": [
+      54368,
+      1054368
+    ]
+  },
+  {
+    "cluster_id": 322,
+    "canonical_news_id": 1054357,
+    "news_ids": [
+      1054357,
+      54357
+    ]
+  },
+  {
+    "cluster_id": 323,
+    "canonical_news_id": 54279,
+    "news_ids": [
+      54279
+    ]
+  },
+  {
+    "cluster_id": 324,
+    "canonical_news_id": 1054281,
+    "news_ids": [
+      1054281,
+      54281
+    ]
+  },
+  {
+    "cluster_id": 325,
+    "canonical_news_id": 1054161,
+    "news_ids": [
+      1054161,
+      54161
+    ]
+  },
+  {
+    "cluster_id": 326,
+    "canonical_news_id": 1054087,
+    "news_ids": [
+      1054087
+    ]
+  },
+  {
+    "cluster_id": 327,
+    "canonical_news_id": 1054480,
+    "news_ids": [
+      1054480,
+      54480
+    ]
+  },
+  {
+    "cluster_id": 328,
+    "canonical_news_id": 1054279,
+    "news_ids": [
+      1054279
+    ]
+  },
+  {
+    "cluster_id": 329,
+    "canonical_news_id": 1054581,
+    "news_ids": [
+      1054581,
+      54581
+    ]
+  },
+  {
+    "cluster_id": 330,
+    "canonical_news_id": 54679,
+    "news_ids": [
+      54679,
+      1054679
+    ]
+  },
+  {
+    "cluster_id": 331,
+    "canonical_news_id": 1054351,
+    "news_ids": [
+      1054351,
+      54351
+    ]
+  },
+  {
+    "cluster_id": 332,
+    "canonical_news_id": 54142,
+    "news_ids": [
+      54142
+    ]
+  },
+  {
+    "cluster_id": 333,
+    "canonical_news_id": 1054374,
+    "news_ids": [
+      1054374,
+      54374
+    ]
+  },
+  {
+    "cluster_id": 334,
+    "canonical_news_id": 1054683,
+    "news_ids": [
+      1054683,
+      54683
+    ]
+  },
+  {
+    "cluster_id": 335,
+    "canonical_news_id": 1054325,
+    "news_ids": [
+      1054325,
+      54325
+    ]
+  },
+  {
+    "cluster_id": 336,
+    "canonical_news_id": 1054519,
+    "news_ids": [
+      1054519
+    ]
+  },
+  {
+    "cluster_id": 337,
+    "canonical_news_id": 54127,
+    "news_ids": [
+      54127,
+      1054127
+    ]
+  },
+  {
+    "cluster_id": 338,
+    "canonical_news_id": 1054251,
+    "news_ids": [
+      1054251
+    ]
+  },
+  {
+    "cluster_id": 339,
+    "canonical_news_id": 1054437,
+    "news_ids": [
+      1054437,
+      54437
+    ]
+  },
+  {
+    "cluster_id": 340,
+    "canonical_news_id": 54664,
+    "news_ids": [
+      54664,
+      1054664
+    ]
+  },
+  {
+    "cluster_id": 341,
+    "canonical_news_id": 54410,
+    "news_ids": [
+      54410,
+      1054410
+    ]
+  },
+  {
+    "cluster_id": 342,
+    "canonical_news_id": 54676,
+    "news_ids": [
+      54676
+    ]
+  },
+  {
+    "cluster_id": 343,
+    "canonical_news_id": 1054321,
+    "news_ids": [
+      1054321,
+      54321
+    ]
+  },
+  {
+    "cluster_id": 344,
+    "canonical_news_id": 1054464,
+    "news_ids": [
+      1054464,
+      54464
+    ]
+  },
+  {
+    "cluster_id": 345,
+    "canonical_news_id": 54255,
+    "news_ids": [
+      54255,
+      1054255
+    ]
+  },
+  {
+    "cluster_id": 346,
+    "canonical_news_id": 1054675,
+    "news_ids": [
+      1054675,
+      54675
+    ]
+  },
+  {
+    "cluster_id": 347,
+    "canonical_news_id": 1054152,
+    "news_ids": [
+      1054152,
+      54152
+    ]
+  },
+  {
+    "cluster_id": 348,
+    "canonical_news_id": 54650,
+    "news_ids": [
+      54650,
+      1054650
+    ]
+  },
+  {
+    "cluster_id": 349,
+    "canonical_news_id": 54488,
+    "news_ids": [
+      54488,
+      1054488
+    ]
+  },
+  {
+    "cluster_id": 350,
+    "canonical_news_id": 1054506,
+    "news_ids": [
+      1054506,
+      54506
+    ]
+  },
+  {
+    "cluster_id": 351,
+    "canonical_news_id": 1054208,
+    "news_ids": [
+      1054208
+    ]
+  },
+  {
+    "cluster_id": 352,
+    "canonical_news_id": 54461,
+    "news_ids": [
+      54461,
+      1054461
+    ]
+  },
+  {
+    "cluster_id": 353,
+    "canonical_news_id": 54366,
+    "news_ids": [
+      54366
+    ]
+  },
+  {
+    "cluster_id": 354,
+    "canonical_news_id": 1054263,
+    "news_ids": [
+      1054263
+    ]
+  },
+  {
+    "cluster_id": 355,
+    "canonical_news_id": 54280,
+    "news_ids": [
+      54280,
+      1054280
+    ]
+  },
+  {
+    "cluster_id": 356,
+    "canonical_news_id": 1054181,
+    "news_ids": [
+      1054181,
+      54181
+    ]
+  },
+  {
+    "cluster_id": 357,
+    "canonical_news_id": 1054460,
+    "news_ids": [
+      1054460,
+      54460
+    ]
+  },
+  {
+    "cluster_id": 358,
+    "canonical_news_id": 1054444,
+    "news_ids": [
+      1054444,
+      54444
+    ]
+  },
+  {
+    "cluster_id": 359,
+    "canonical_news_id": 1054532,
+    "news_ids": [
+      1054532,
+      54532
+    ]
+  },
+  {
+    "cluster_id": 360,
+    "canonical_news_id": 54515,
+    "news_ids": [
+      54515,
+      1054515
+    ]
+  },
+  {
+    "cluster_id": 361,
+    "canonical_news_id": 54458,
+    "news_ids": [
+      54458,
+      1054458
+    ]
+  },
+  {
+    "cluster_id": 362,
+    "canonical_news_id": 1054308,
+    "news_ids": [
+      1054308
+    ]
+  },
+  {
+    "cluster_id": 363,
+    "canonical_news_id": 54295,
+    "news_ids": [
+      54295
+    ]
+  },
+  {
+    "cluster_id": 364,
+    "canonical_news_id": 54500,
+    "news_ids": [
+      54500,
+      1054500
+    ]
+  },
+  {
+    "cluster_id": 365,
+    "canonical_news_id": 54516,
+    "news_ids": [
+      54516,
+      1054516
+    ]
+  },
+  {
+    "cluster_id": 366,
+    "canonical_news_id": 1054618,
+    "news_ids": [
+      1054618
+    ]
+  },
+  {
+    "cluster_id": 367,
+    "canonical_news_id": 1054283,
+    "news_ids": [
+      1054283
+    ]
+  },
+  {
+    "cluster_id": 368,
+    "canonical_news_id": 1054350,
+    "news_ids": [
+      1054350,
+      54350
+    ]
+  },
+  {
+    "cluster_id": 369,
+    "canonical_news_id": 1054579,
+    "news_ids": [
+      1054579,
+      54579
+    ]
+  },
+  {
+    "cluster_id": 370,
+    "canonical_news_id": 1054178,
+    "news_ids": [
+      1054178,
+      54178
+    ]
+  },
+  {
+    "cluster_id": 371,
+    "canonical_news_id": 54431,
+    "news_ids": [
+      54431,
+      1054431
+    ]
+  },
+  {
+    "cluster_id": 372,
+    "canonical_news_id": 1054356,
+    "news_ids": [
+      1054356,
+      54356
+    ]
+  },
+  {
+    "cluster_id": 373,
+    "canonical_news_id": 54372,
+    "news_ids": [
+      54372,
+      1054372
+    ]
+  },
+  {
+    "cluster_id": 374,
+    "canonical_news_id": 54369,
+    "news_ids": [
+      54369
+    ]
+  },
+  {
+    "cluster_id": 375,
+    "canonical_news_id": 1054306,
+    "news_ids": [
+      1054306,
+      54306
+    ]
+  },
+  {
+    "cluster_id": 376,
+    "canonical_news_id": 54476,
+    "news_ids": [
+      54476,
+      1054476
+    ]
+  },
+  {
+    "cluster_id": 377,
+    "canonical_news_id": 54251,
+    "news_ids": [
+      54251
+    ]
+  },
+  {
+    "cluster_id": 378,
+    "canonical_news_id": 1054392,
+    "news_ids": [
+      1054392,
+      54392
+    ]
+  },
+  {
+    "cluster_id": 379,
+    "canonical_news_id": 1054478,
+    "news_ids": [
+      1054478
+    ]
+  },
+  {
+    "cluster_id": 380,
+    "canonical_news_id": 1054530,
+    "news_ids": [
+      1054530,
+      54530
+    ]
+  },
+  {
+    "cluster_id": 381,
+    "canonical_news_id": 54547,
+    "news_ids": [
+      54547,
+      1054547
+    ]
+  },
+  {
+    "cluster_id": 382,
+    "canonical_news_id": 54648,
+    "news_ids": [
+      54648
+    ]
+  },
+  {
+    "cluster_id": 383,
+    "canonical_news_id": 54345,
+    "news_ids": [
+      54345
+    ]
+  },
+  {
+    "cluster_id": 384,
+    "canonical_news_id": 54564,
+    "news_ids": [
+      54564,
+      1054564
+    ]
+  },
+  {
+    "cluster_id": 385,
+    "canonical_news_id": 54657,
+    "news_ids": [
+      54657
+    ]
+  },
+  {
+    "cluster_id": 386,
+    "canonical_news_id": 1054546,
+    "news_ids": [
+      1054546,
+      54546
+    ]
+  },
+  {
+    "cluster_id": 387,
+    "canonical_news_id": 1054340,
+    "news_ids": [
+      1054340
+    ]
+  },
+  {
+    "cluster_id": 388,
+    "canonical_news_id": 54482,
+    "news_ids": [
+      54482,
+      1054482
+    ]
+  },
+  {
+    "cluster_id": 389,
+    "canonical_news_id": 54263,
+    "news_ids": [
+      54263
+    ]
+  },
+  {
+    "cluster_id": 390,
+    "canonical_news_id": 54489,
+    "news_ids": [
+      54489,
+      1054489
+    ]
+  },
+  {
+    "cluster_id": 391,
+    "canonical_news_id": 54545,
+    "news_ids": [
+      54545,
+      1054545
+    ]
+  },
+  {
+    "cluster_id": 392,
+    "canonical_news_id": 54417,
+    "news_ids": [
+      54417,
+      1054417
+    ]
+  },
+  {
+    "cluster_id": 393,
+    "canonical_news_id": 1054339,
+    "news_ids": [
+      1054339
+    ]
+  },
+  {
+    "cluster_id": 394,
+    "canonical_news_id": 1054620,
+    "news_ids": [
+      1054620
+    ]
+  },
+  {
+    "cluster_id": 395,
+    "canonical_news_id": 54383,
+    "news_ids": [
+      54383,
+      1054383
+    ]
+  },
+  {
+    "cluster_id": 396,
+    "canonical_news_id": 54405,
+    "news_ids": [
+      54405,
+      1054405
+    ]
+  },
+  {
+    "cluster_id": 397,
+    "canonical_news_id": 1054386,
+    "news_ids": [
+      1054386,
+      54386
+    ]
+  },
+  {
+    "cluster_id": 398,
+    "canonical_news_id": 54508,
+    "news_ids": [
+      54508,
+      1054508
+    ]
+  },
+  {
+    "cluster_id": 399,
+    "canonical_news_id": 54514,
+    "news_ids": [
+      54514
+    ]
+  },
+  {
+    "cluster_id": 400,
+    "canonical_news_id": 1054495,
+    "news_ids": [
+      1054495,
+      54495
+    ]
+  },
+  {
+    "cluster_id": 401,
+    "canonical_news_id": 54462,
+    "news_ids": [
+      54462,
+      1054462
+    ]
+  },
+  {
+    "cluster_id": 402,
+    "canonical_news_id": 54534,
+    "news_ids": [
+      54534,
+      1054534
+    ]
+  },
+  {
+    "cluster_id": 403,
+    "canonical_news_id": 54549,
+    "news_ids": [
+      54549,
+      1054549
+    ]
+  },
+  {
+    "cluster_id": 404,
+    "canonical_news_id": 54519,
+    "news_ids": [
+      54519
+    ]
+  },
+  {
+    "cluster_id": 405,
+    "canonical_news_id": 1054423,
+    "news_ids": [
+      1054423
+    ]
+  },
+  {
+    "cluster_id": 406,
+    "canonical_news_id": 54340,
+    "news_ids": [
+      54340
+    ]
+  },
+  {
+    "cluster_id": 407,
+    "canonical_news_id": 1054676,
+    "news_ids": [
+      1054676
+    ]
+  },
+  {
+    "cluster_id": 408,
+    "canonical_news_id": 54643,
+    "news_ids": [
+      54643,
+      1054643
+    ]
+  },
+  {
+    "cluster_id": 409,
+    "canonical_news_id": 1054199,
+    "news_ids": [
+      1054199
+    ]
+  },
+  {
+    "cluster_id": 410,
+    "canonical_news_id": 1054514,
+    "news_ids": [
+      1054514
+    ]
+  },
+  {
+    "cluster_id": 411,
+    "canonical_news_id": 54478,
+    "news_ids": [
+      54478
+    ]
+  },
+  {
+    "cluster_id": 412,
+    "canonical_news_id": 1054260,
+    "news_ids": [
+      1054260,
+      54260
+    ]
+  },
+  {
+    "cluster_id": 413,
+    "canonical_news_id": 54342,
+    "news_ids": [
+      54342
+    ]
+  },
+  {
+    "cluster_id": 414,
+    "canonical_news_id": 1054585,
+    "news_ids": [
+      1054585,
+      54585
+    ]
+  }
+]
