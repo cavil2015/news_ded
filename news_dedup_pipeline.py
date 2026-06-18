@@ -56,13 +56,13 @@ class BaseEmbeddingModel(ABC):
 
 # --- Implementations ---
 class RubertEmbeddingModel(BaseEmbeddingModel):
-    def __init__(self, model_name_or_path: str = "cointegrated/rubert-tiny2"):
-        local_path = os.path.join(os.path.dirname(__file__), "models", "rubert-tiny2")
-        self.model_path = local_path if os.path.exists(local_path) else model_name_or_path
+    def __init__(self, model_name_or_path: str = "models/rubert-tiny2"):
+        self.model_path = model_name_or_path
         self.model = SentenceTransformer(self.model_path)
         
     def encode(self, texts: List[str]) -> np.ndarray:
-        embeddings = self.model.encode(texts, show_progress_bar=False)
+        print(f"Encoding {len(texts)} texts...")
+        embeddings = self.model.encode(texts, show_progress_bar=True, batch_size=128, normalize_embeddings=True)
         return np.ascontiguousarray(embeddings, dtype=np.float32)
 
 class DataLoader:
@@ -90,6 +90,8 @@ class DataLoader:
         
         articles = []
         for item in combined:
+            if 'true_cluster_id' not in item or item['true_cluster_id'] is None:
+                item['true_cluster_id'] = item.get('id')
             try:
                 articles.append(NewsArticle(**item))
             except ValidationError:
@@ -192,12 +194,13 @@ class NewsDeduplicationPipeline:
 
 def main():
     parser = argparse.ArgumentParser(description="News Deduplication Pipeline")
+    parser.add_argument('--model_path', type=str, default='models/multilingual-e5-base', help='Path to local SentenceTransformer model')
     parser.add_argument("--limit", type=int, default=None, help="Limit the number of news articles to process")
     args = parser.parse_args()
 
     # Dependency Injection
     data_loader = DataLoader()
-    embedder = RubertEmbeddingModel()
+    embedder = RubertEmbeddingModel(model_name_or_path=args.model_path)
     search_engine = FaissSearchEngine(threshold=0.99)
     clusterer = GraphClusterer(time_window_days=3)
     evaluator = MetricEvaluator()

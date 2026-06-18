@@ -41,7 +41,7 @@ def main():
                 if line.strip():
                     data.append(json.loads(line))
 
-    articles = data[:1000]
+    articles = data[:10000]
     synthetic_articles = []
     
     for article in articles:
