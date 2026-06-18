@@ -194,14 +194,16 @@ class NewsDeduplicationPipeline:
 
 def main():
     parser = argparse.ArgumentParser(description="News Deduplication Pipeline")
-    parser.add_argument('--model_path', type=str, default='models/multilingual-e5-base', help='Path to local SentenceTransformer model')
+    parser.add_argument("--model_path", type=str, default="models/multilingual-e5-base", help="Path to the embedding model")
     parser.add_argument("--limit", type=int, default=None, help="Limit the number of news articles to process")
+    parser.add_argument("--threshold", type=float, default=0.99, help="Cosine similarity threshold for clustering")
+
     args = parser.parse_args()
 
-    # Dependency Injection
-    data_loader = DataLoader()
+    # Инициализация компонентов
+    data_loader = DataLoader("data/news_dump_full.json", "data/synthetic_duplicates.json")
     embedder = RubertEmbeddingModel(model_name_or_path=args.model_path)
-    search_engine = FaissSearchEngine(threshold=0.99)
+    search_engine = FaissSearchEngine(threshold=args.threshold)
     clusterer = GraphClusterer(time_window_days=3)
     evaluator = MetricEvaluator()
     
