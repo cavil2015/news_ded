@@ -1,13 +1,27 @@
 import json
 import random
+import argparse
+import sys
 
-def inspect_clusters():
-    with open("data/news_dump_full.json", "r", encoding="utf-8") as f:
-        full_data = json.load(f)
+# Fix for printing Russian characters in Windows consoles
+sys.stdout.reconfigure(encoding='utf-8')
+
+def inspect_clusters(full_data_path: str, clusters_path: str, seed: int = 42):
+    try:
+        with open(full_data_path, "r", encoding="utf-8") as f:
+            full_data = json.load(f)
+    except Exception as e:
+        print(f"Error loading {full_data_path}: {e}")
+        return
+        
     article_dict = {str(item["id"]): item for item in full_data}
     
-    with open("data/clusters_output.json", "r", encoding="utf-8") as f:
-        clusters = json.load(f)
+    try:
+        with open(clusters_path, "r", encoding="utf-8") as f:
+            clusters = json.load(f)
+    except Exception as e:
+        print(f"Error loading {clusters_path}: {e}")
+        return
         
     # Find clusters with more than 1 article
     dup_clusters = [c for c in clusters if len(c["news_ids"]) > 1]
@@ -19,7 +33,7 @@ def inspect_clusters():
         return
         
     # Pick a few random clusters to show
-    random.seed(42)  # For reproducibility
+    random.seed(seed)
     sample_clusters = random.sample(dup_clusters, min(5, len(dup_clusters)))
     
     for i, c in enumerate(sample_clusters):
@@ -42,4 +56,10 @@ def inspect_clusters():
                 print(f"[{idx+1}] ID: {news_id} (Not found in dict)")
 
 if __name__ == "__main__":
-    inspect_clusters()
+    parser = argparse.ArgumentParser(description="Inspect news deduplication clusters")
+    parser.add_argument("--full_data", type=str, default="data/news_dump_full.json", help="Path to full raw dataset")
+    parser.add_argument("--clusters", type=str, default="data/clusters_output.json", help="Path to clusters output")
+    parser.add_argument("--seed", type=int, default=42, help="Random seed for sampling")
+    args = parser.parse_args()
+    
+    inspect_clusters(args.full_data, args.clusters, args.seed)
