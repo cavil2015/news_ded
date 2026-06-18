@@ -161,7 +161,7 @@ class MinHashPreFilter:
         return unique_articles, hidden_map, minhashes
 
 class WindowedSimilaritySearch:
-    def __init__(self, threshold: float = 0.96, time_window_days: int = 2, minhash_threshold: float = 0.10):
+    def __init__(self, threshold: float = 0.98, time_window_days: int = 2, minhash_threshold: float = 0.30):
         self.threshold = threshold
         self.time_window_days = time_window_days
         self.minhash_threshold = minhash_threshold
@@ -339,7 +339,7 @@ def main():
     parser.add_argument("--dup_input", type=str, default=None, help="Input JSON file with synthetic duplicates")
     parser.add_argument("--model_path", type=str, default="models/multilingual-e5-base", help="Path to the embedding model")
     parser.add_argument("--limit", type=int, default=None, help="Limit the number of news articles to process")
-    parser.add_argument("--threshold", type=float, default=0.96, help="Cosine similarity threshold for FAISS clustering")
+    parser.add_argument("--threshold", type=float, default=0.98, help="Cosine similarity threshold for FAISS clustering")
     parser.add_argument("--time_window", type=int, default=2, help="Sliding window in days")
     parser.add_argument("--reranker_path", type=str, default="models/bge-reranker-v2-m3", help="Path or name of the cross-encoder")
     parser.add_argument("--cross_threshold", type=float, default=0.8, help="Threshold for the cross-encoder")
