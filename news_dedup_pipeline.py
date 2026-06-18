@@ -4,14 +4,14 @@ import sys
 import argparse
 import random
 import re
-from typing import List, Dict, Optional, Tuple, Set
+from typing import List, Dict, Optional, Tuple
 from datetime import datetime
 from abc import ABC, abstractmethod
 
 import faiss
 import numpy as np
 import networkx as nx
-from datasketch import MinHash, MinHashLSH
+from datasketch import MinHash
 from dotenv import load_dotenv
 from pydantic import BaseModel, ValidationError, Field
 from sentence_transformers import SentenceTransformer, CrossEncoder
@@ -24,7 +24,10 @@ sys.stdout.reconfigure(encoding='utf-8')
 load_dotenv()
 os.environ["HF_HUB_DISABLE_PROGRESS_BARS"] = "1"
 os.environ["HF_ENDPOINT"] = "https://hf-mirror.com"
-os.environ["TQDM_NCOLS"] = "100"  # Fix progress bar spam in Windows console
+os.environ["TQDM_NCOLS"] = "100"
+
+def get_device() -> str:
+    return "cuda" if torch.cuda.is_available() else "cpu"
 
 # --- Data Models ---
 class NewsArticle(BaseModel):
@@ -34,6 +37,9 @@ class NewsArticle(BaseModel):
     source: str
     published_at: datetime
     true_cluster_id: Optional[int] = Field(default=None)
+
+    def get_full_text(self) -> str:
+        return f"{self.title}. {self.text}"
 
 class EventCluster:
     def __init__(self, cluster_id: int, articles: List[NewsArticle]):
@@ -59,19 +65,32 @@ class BaseEmbeddingModel(ABC):
         pass
 
 # --- Implementations ---
-class RubertEmbeddingModel(BaseEmbeddingModel):
-    def __init__(self, model_name_or_path: str = "models/rubert-tiny2"):
+class CachedSentenceTransformerModel(BaseEmbeddingModel):
+    def __init__(self, model_name_or_path: str = "intfloat/multilingual-e5-base", cache_path: Optional[str] = "data/embeddings_cache.npy"):
         self.model_path = model_name_or_path
-        device = "cuda" if torch.cuda.is_available() else "cpu"
-        self.model = SentenceTransformer(self.model_path, device=device)
+        self.cache_path = cache_path
+        self.model = SentenceTransformer(self.model_path, device=get_device())
         
     def encode(self, texts: List[str]) -> np.ndarray:
+        if self.cache_path and os.path.exists(self.cache_path):
+            print(f"Loading cached embeddings from {self.cache_path}...")
+            embeddings = np.load(self.cache_path)
+            if len(embeddings) == len(texts):
+                return embeddings
+            print("Cache size mismatch, recomputing...")
+
         print(f"Encoding {len(texts)} texts...")
         embeddings = self.model.encode(texts, show_progress_bar=True, batch_size=32, normalize_embeddings=True)
-        return np.ascontiguousarray(embeddings, dtype=np.float32)
+        embeddings = np.ascontiguousarray(embeddings, dtype=np.float32)
+
+        if self.cache_path:
+            os.makedirs(os.path.dirname(self.cache_path), exist_ok=True)
+            np.save(self.cache_path, embeddings)
+            
+        return embeddings
 
 class DataLoader:
-    def __init__(self, full_data_path: str = "data/news_dump_full.json", dup_data_path: str = "data/synthetic_duplicates.json"):
+    def __init__(self, full_data_path: str = "data/news_dump_full.json", dup_data_path: Optional[str] = "data/synthetic_duplicates.json"):
         self.full_data_path = full_data_path
         self.dup_data_path = dup_data_path
 
@@ -86,7 +105,7 @@ class DataLoader:
                 data_dup = json.load(f)
                 
         if limit is not None:
-            half = limit // 2
+            half = limit // 2 if self.dup_data_path else limit
             data_full = data_full[:half]
             data_dup = data_dup[:half]
             
@@ -106,8 +125,7 @@ class DataLoader:
         return articles
 
 class MinHashPreFilter:
-    def __init__(self, threshold: float = 0.85, num_perm: int = 128):
-        self.threshold = threshold
+    def __init__(self, num_perm: int = 128):
         self.num_perm = num_perm
 
     def _tokenize(self, text: str) -> List[str]:
@@ -121,7 +139,7 @@ class MinHashPreFilter:
         minhashes = {}
         for a in articles:
             m = MinHash(num_perm=self.num_perm)
-            for word in self._tokenize(f"{a.title} {a.text}"):
+            for word in self._tokenize(a.get_full_text()):
                 m.update(word.encode('utf8'))
             sig = tuple(m.hashvalues)
             if sig not in groups:
@@ -143,19 +161,18 @@ class MinHashPreFilter:
         return unique_articles, hidden_map, minhashes
 
 class WindowedSimilaritySearch:
-    def __init__(self, threshold: float = 0.98, time_window_days: int = 1, minhash_threshold: float = 0.10):
+    def __init__(self, threshold: float = 0.96, time_window_days: int = 2, minhash_threshold: float = 0.10):
         self.threshold = threshold
         self.time_window_days = time_window_days
         self.minhash_threshold = minhash_threshold
         
-    def search_pairs(self, embeddings: np.ndarray, articles: List[NewsArticle], minhashes: Dict[str, MinHash] = None) -> List[Tuple[int, int]]:
+    def search_pairs(self, embeddings: np.ndarray, articles: List[NewsArticle], minhashes: Optional[Dict[str, MinHash]] = None) -> List[Tuple[int, int]]:
         print("Searching for pairs using Sliding Window...")
-        device = "cuda" if torch.cuda.is_available() else "cpu"
         
         # Normalize embeddings for cosine similarity
         norms = np.linalg.norm(embeddings, axis=1, keepdims=True)
         embeddings_normalized = embeddings / np.where(norms == 0, 1e-10, norms)
-        emb_t = torch.tensor(embeddings_normalized, device=device)
+        emb_t = torch.tensor(embeddings_normalized, device=get_device())
         
         timestamps = [a.published_at for a in articles]
         pair_indices = []
@@ -190,24 +207,17 @@ class WindowedSimilaritySearch:
         return pair_indices
 
 class CrossEncoderReranker:
-    def __init__(self, model_name_or_path: str = "BAAI/bge-reranker-v2-m3", threshold: float = 0.5):
+    def __init__(self, model_name_or_path: str = "BAAI/bge-reranker-v2-m3", threshold: float = 0.8):
         self.threshold = threshold
-        device = "cuda" if torch.cuda.is_available() else "cpu"
-        self.model = CrossEncoder(model_name_or_path, max_length=512, device=device)
+        self.model = CrossEncoder(model_name_or_path, max_length=512, device=get_device())
 
     def filter_pairs(self, articles: List[NewsArticle], pair_indices: List[Tuple[int, int]]) -> List[Tuple[int, int, float]]:
-        print("Reranking pairs with Cross-Encoder...")
-        
         if not pair_indices:
             return []
             
-        pairs = []
-        for (i, j) in pair_indices:
-            text_i = f"{articles[i].title}. {articles[i].text}"
-            text_j = f"{articles[j].title}. {articles[j].text}"
-            pairs.append([text_i, text_j])
-            
-        print(f"Scoring {len(pairs)} candidate pairs...")
+        print(f"Reranking {len(pair_indices)} candidate pairs with Cross-Encoder...")
+        pairs = [[articles[i].get_full_text(), articles[j].get_full_text()] for i, j in pair_indices]
+        
         scores = self.model.predict(pairs, batch_size=32, show_progress_bar=True)
         
         approved_pairs = []
@@ -220,22 +230,20 @@ class CrossEncoderReranker:
 
 
 class GraphClusterer:
+    def __init__(self, resolution: float = 1.0):
+        self.resolution = resolution
+
     def build_clusters(self, articles: List[NewsArticle], approved_pairs: List[Tuple[int, int, float]]) -> List[EventCluster]:
         G = nx.Graph()
         G.add_nodes_from(range(len(articles)))
         
         for edge in approved_pairs:
-            if len(edge) == 3:
-                u, v, weight = edge
-            else:
-                u, v = edge[:2]
-                weight = 1.0
+            u, v = edge[:2]
+            weight = edge[2] if len(edge) == 3 else 1.0
             G.add_edge(u, v, weight=weight)
             
         if G.number_of_edges() > 0:
-            # Используем алгоритм Лувена для предотвращения "снежного кома".
-            # resolution > 1 разбивает граф на более мелкие/плотные кластеры.
-            communities = nx.community.louvain_communities(G, weight='weight', resolution=1.0)
+            communities = nx.community.louvain_communities(G, weight='weight', resolution=self.resolution)
         else:
             communities = [{n} for n in G.nodes()]
             
@@ -252,7 +260,6 @@ class MetricEvaluator:
     @staticmethod
     def evaluate(articles: List[NewsArticle], clusters: List[EventCluster]) -> Optional[float]:
         pred_labels = np.zeros(len(articles))
-        # Create mapping from article id to index
         id_to_idx = {a.id: i for i, a in enumerate(articles)}
         
         for cluster in clusters:
@@ -301,20 +308,8 @@ class NewsDeduplicationPipeline:
         print("Sorting articles by published_at for sliding window...")
         articles.sort(key=lambda x: x.published_at)
             
-        print("Generating embeddings...")
-        cache_path = "data/embeddings_cache.npy"
-        texts = [f"{a.title}. {a.text}" for a in articles]
-        
-        if os.path.exists(cache_path):
-            print(f"Loading cached embeddings from {cache_path}...")
-            embeddings = np.load(cache_path)
-            if len(embeddings) != len(articles):
-                print("Cache size mismatch, recomputing...")
-                embeddings = self.embedder.encode(texts)
-                np.save(cache_path, embeddings)
-        else:
-            embeddings = self.embedder.encode(texts)
-            np.save(cache_path, embeddings)
+        texts = [a.get_full_text() for a in articles]
+        embeddings = self.embedder.encode(texts)
         
         print("Поиск кандидатов: Sliding Window Similarity Search.")
         pair_indices = self.search_engine.search_pairs(embeddings, articles, minhashes=minhashes)
@@ -341,18 +336,20 @@ class NewsDeduplicationPipeline:
 def main():
     parser = argparse.ArgumentParser(description="News Deduplication Pipeline")
     parser.add_argument("--input", type=str, default="data/news_dump_full.json", help="Input JSON file with articles")
+    parser.add_argument("--dup_input", type=str, default=None, help="Input JSON file with synthetic duplicates")
     parser.add_argument("--model_path", type=str, default="models/multilingual-e5-base", help="Path to the embedding model")
     parser.add_argument("--limit", type=int, default=None, help="Limit the number of news articles to process")
-    parser.add_argument("--threshold", type=float, default=0.98, help="Cosine similarity threshold for FAISS clustering")
-    parser.add_argument("--reranker_path", type=str, default="BAAI/bge-reranker-v2-m3", help="Path or name of the cross-encoder")
-    parser.add_argument("--cross_threshold", type=float, default=0.5, help="Threshold for the cross-encoder")
+    parser.add_argument("--threshold", type=float, default=0.96, help="Cosine similarity threshold for FAISS clustering")
+    parser.add_argument("--time_window", type=int, default=2, help="Sliding window in days")
+    parser.add_argument("--reranker_path", type=str, default="models/bge-reranker-v2-m3", help="Path or name of the cross-encoder")
+    parser.add_argument("--cross_threshold", type=float, default=0.8, help="Threshold for the cross-encoder")
 
     args = parser.parse_args()
 
     # Инициализация компонентов
-    data_loader = DataLoader(args.input, None)
-    embedder = RubertEmbeddingModel(model_name_or_path=args.model_path)
-    search_engine = WindowedSimilaritySearch(threshold=args.threshold, time_window_days=1)
+    data_loader = DataLoader(args.input, args.dup_input)
+    embedder = CachedSentenceTransformerModel(model_name_or_path=args.model_path)
+    search_engine = WindowedSimilaritySearch(threshold=args.threshold, time_window_days=args.time_window)
     clusterer = GraphClusterer()
     evaluator = MetricEvaluator()
     reranker = CrossEncoderReranker(model_name_or_path=args.reranker_path, threshold=args.cross_threshold) if args.reranker_path else None
@@ -375,7 +372,7 @@ def main():
     print("\n✅ Сохранено разбиение по кластерам в data/clusters_output.json")
     
     # Save cleaned dataset (only canonical articles)
-    cleaned_articles = [c.canonical_article.to_dict() for c in clusters]
+    cleaned_articles = [c.canonical_article.model_dump(mode='json') for c in clusters]
     with open("data/news_dump_cleaned.json", "w", encoding="utf-8") as f:
         json.dump(cleaned_articles, f, ensure_ascii=False, indent=2)
     print(f"✅ Сохранен очищенный датасет без мусора ({len(cleaned_articles)} статей) в data/news_dump_cleaned.json")
