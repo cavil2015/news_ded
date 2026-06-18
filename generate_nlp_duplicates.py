@@ -2,10 +2,16 @@ import json
 import random
 import os
 import re
+import argparse
 
-def mutate_text(text):
+def mutate_text(text: str) -> str:
+    """
+    Applies simple NLP mutations to generate synthetic duplicates.
+    Shuffles sentences or drops a word.
+    """
     if not text:
         return text
+        
     # Split into sentences roughly
     sentences = re.split(r'(?<=[.!?])\s+', text)
     if len(sentences) > 1:
@@ -21,13 +27,12 @@ def mutate_text(text):
             text = ' '.join(words)
     return text
 
-def main():
-    input_file = 'data/news_dump_cleaned.json'
-    output_file = 'data/synthetic_duplicates_clean.json'
-    
-    # Check if data exists
+def generate_duplicates(input_file: str, output_file: str, limit: int):
+    """
+    Reads a subset of articles, mutates their content, and saves as synthetic duplicates.
+    """
     if not os.path.exists(input_file):
-        print(f"Error: {input_file} not found")
+        print(f"Error: Input file {input_file} not found")
         return
 
     # Try json lines first, then full json
@@ -41,13 +46,13 @@ def main():
                 if line.strip():
                     data.append(json.loads(line))
 
-    articles = data[:1000]
+    articles = data[:limit] if limit > 0 else data
     synthetic_articles = []
     
     for article in articles:
         new_article = article.copy()
         
-        # Original id
+        # Original id mapping
         original_id = article.get('id', article.get('_id', random.randint(1000, 9999)))
         try:
             new_id = int(original_id) + 1000000
@@ -69,11 +74,17 @@ def main():
             
         synthetic_articles.append(new_article)
         
-    os.makedirs(os.path.dirname(output_file), exist_ok=True)
+    os.makedirs(os.path.dirname(output_file) or ".", exist_ok=True)
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(synthetic_articles, f, indent=4, ensure_ascii=False)
     
-    print(f"Successfully generated {len(synthetic_articles)} synthetic articles and saved to {output_file}")
+    print(f"✅ Successfully generated {len(synthetic_articles)} synthetic articles and saved to {output_file}")
 
 if __name__ == '__main__':
-    main()
+    parser = argparse.ArgumentParser(description="Generate synthetic NLP duplicates for deduplication testing")
+    parser.add_argument("--input", type=str, default="data/news_dump_cleaned.json", help="Path to input JSON articles")
+    parser.add_argument("--output", type=str, default="data/synthetic_duplicates_clean.json", help="Path to output synthetic articles")
+    parser.add_argument("--limit", type=int, default=1000, help="Number of articles to process (0 for all)")
+    args = parser.parse_args()
+    
+    generate_duplicates(args.input, args.output, args.limit)
