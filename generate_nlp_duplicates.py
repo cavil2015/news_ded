@@ -22,8 +22,8 @@ def mutate_text(text):
     return text
 
 def main():
-    input_file = 'data/news_dump_full.json'
-    output_file = 'data/synthetic_duplicates.json'
+    input_file = 'data/news_dump_cleaned.json'
+    output_file = 'data/synthetic_duplicates_clean.json'
     
     # Check if data exists
     if not os.path.exists(input_file):
@@ -41,7 +41,7 @@ def main():
                 if line.strip():
                     data.append(json.loads(line))
 
-    articles = data[:10000]
+    articles = data[:1000]
     synthetic_articles = []
     
     for article in articles:
