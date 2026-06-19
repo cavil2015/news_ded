@@ -39,7 +39,29 @@ class NewsArticle(BaseModel):
     true_cluster_id: Optional[int] = Field(default=None)
 
     def get_full_text(self) -> str:
-        return f"{self.title}. {self.text}"
+        text = f"{self.title}. {self.text}"
+        bad_phrases = [
+            "Yahoo on osa", "Sivustot ja sovellukset", "Jos et halua meidän", 
+            "Tietosuojakäytännöstämme", "Risk Disclosure", "Fusion Media", 
+            "Access to this page has been denied", "Target URL returned error", 
+            "Just a moment...", "Si no quieres que nosotros", "Tu privacidad", 
+            "Para obtener más información", "Voit peruuttaa", "Prices of cryptocurrencies", 
+            "evästeitä", "cookies", "tietosuoja", "privacidad", "hallintapaneelin",
+            "Markdown Content: Before we continue", "Press & Hold to confirm you are a human",
+            "Before deciding to trade in financial instrument", "Trading on margin increases the financial risks"
+        ]
+        
+        sentences = text.split('. ')
+        clean_sentences = []
+        for s in sentences:
+            if not any(bp.lower() in s.lower() for bp in bad_phrases):
+                clean_sentences.append(s)
+                
+        # If everything was boilerplate, fallback to title
+        clean_text = ". ".join(clean_sentences).strip()
+        if not clean_text:
+            return self.title
+        return clean_text
 
 class EventCluster:
     def __init__(self, cluster_id: int, articles: List[NewsArticle]):
@@ -112,10 +134,24 @@ class DataLoader:
         combined = data_full + data_dup
         random.shuffle(combined)
         
+        # Identifiers of articles that are part of the synthetic pairs
+        ground_truth_ids = set()
+        for item in data_dup:
+            if 'true_cluster_id' in item:
+                ground_truth_ids.add(str(item['true_cluster_id']))
+            ground_truth_ids.add(str(item.get('id')))
+            
         articles = []
         for item in combined:
-            if 'true_cluster_id' not in item or item['true_cluster_id'] is None:
-                item['true_cluster_id'] = item.get('id')
+            item_id = str(item.get('id'))
+            # If the article is in the ground truth subset, assign a valid cluster ID
+            if item_id in ground_truth_ids:
+                if 'true_cluster_id' not in item or item['true_cluster_id'] is None:
+                    item['true_cluster_id'] = item.get('id')
+            else:
+                # Mask out unannotated articles so they don't skew the evaluation
+                item['true_cluster_id'] = None
+                
             try:
                 articles.append(NewsArticle(**item))
             except ValidationError:
@@ -129,8 +165,7 @@ class MinHashPreFilter:
         self.num_perm = num_perm
 
     def _tokenize(self, text: str) -> List[str]:
-        words = re.findall(r'\w+', text.lower())
-        return [" ".join(words[i:i+3]) for i in range(max(1, len(words) - 2))]
+        return re.findall(r'\w+', text.lower())
 
     def deduplicate(self, articles: List[NewsArticle]) -> Tuple[List[NewsArticle], Dict[str, List[NewsArticle]], Dict[str, MinHash]]:
         print(f"Running MinHash Pre-filtering on {len(articles)} articles...")
@@ -161,7 +196,7 @@ class MinHashPreFilter:
         return unique_articles, hidden_map, minhashes
 
 class WindowedSimilaritySearch:
-    def __init__(self, threshold: float = 0.98, time_window_days: int = 2, minhash_threshold: float = 0.30):
+    def __init__(self, threshold: float = 0.96, time_window_days: int = 2, minhash_threshold: float = 0.70):
         self.threshold = threshold
         self.time_window_days = time_window_days
         self.minhash_threshold = minhash_threshold
@@ -207,24 +242,54 @@ class WindowedSimilaritySearch:
         return pair_indices
 
 class CrossEncoderReranker:
-    def __init__(self, model_name_or_path: str = "BAAI/bge-reranker-v2-m3", threshold: float = 0.8):
+    def __init__(self, model_name_or_path: str = "BAAI/bge-reranker-v2-m3", threshold: float = 0.4):
         self.threshold = threshold
         self.model = CrossEncoder(model_name_or_path, max_length=512, device=get_device())
 
-    def filter_pairs(self, articles: List[NewsArticle], pair_indices: List[Tuple[int, int]]) -> List[Tuple[int, int, float]]:
+    def filter_pairs(self, articles: List[NewsArticle], pair_indices: List[Tuple[int, int]], checkpoint_path: str = "data/cross_encoder_checkpoint.pkl") -> List[Tuple[int, int, float]]:
+        import os, pickle
         if not pair_indices:
             return []
             
-        print(f"Reranking {len(pair_indices)} candidate pairs with Cross-Encoder...")
-        pairs = [[articles[i].get_full_text(), articles[j].get_full_text()] for i, j in pair_indices]
-        
-        scores = self.model.predict(pairs, batch_size=32, show_progress_bar=True)
-        
         approved_pairs = []
-        for idx, (u, v) in enumerate(pair_indices):
-            score = 1 / (1 + np.exp(-scores[idx])) 
-            if score >= self.threshold:
-                approved_pairs.append((u, v, float(score)))
+        start_idx = 0
+        
+        if os.path.exists(checkpoint_path):
+            with open(checkpoint_path, 'rb') as f:
+                checkpoint_data = pickle.load(f)
+                total_pairs = checkpoint_data.get('total_pairs', -1)
+                if total_pairs == len(pair_indices):
+                    print(f"Loading Cross-Encoder progress from {checkpoint_path}")
+                    approved_pairs = checkpoint_data.get('approved_pairs', [])
+                    start_idx = checkpoint_data.get('processed_count', 0)
+                else:
+                    print("Candidate pairs count changed. Discarding old Cross-Encoder cache.")
+                
+        if start_idx >= len(pair_indices):
+            print("All candidate pairs already reranked.")
+            return approved_pairs
+            
+        print(f"Reranking {len(pair_indices)} candidate pairs (Resuming from {start_idx})...")
+        
+        chunk_size = 5000
+        for i in range(start_idx, len(pair_indices), chunk_size):
+            chunk_indices = pair_indices[i:i+chunk_size]
+            pairs = [[articles[u].get_full_text()[:2000], articles[v].get_full_text()[:2000]] for u, v in chunk_indices]
+            
+            print(f"Processing chunk {i//chunk_size + 1}/{(len(pair_indices)+chunk_size-1)//chunk_size}...")
+            scores = self.model.predict(pairs, batch_size=32, show_progress_bar=True)
+            
+            for idx, (u, v) in enumerate(chunk_indices):
+                score = 1 / (1 + np.exp(-scores[idx])) 
+                if score >= self.threshold:
+                    approved_pairs.append((u, v, float(score)))
+                    
+            with open(checkpoint_path, 'wb') as f:
+                pickle.dump({
+                    'approved_pairs': approved_pairs, 
+                    'processed_count': i + len(chunk_indices),
+                    'total_pairs': len(pair_indices)
+                }, f)
                 
         return approved_pairs
 
@@ -257,25 +322,63 @@ class GraphClusterer:
         return clusters
 
 class MetricEvaluator:
-    @staticmethod
-    def evaluate(articles: List[NewsArticle], clusters: List[EventCluster]) -> Optional[float]:
-        pred_labels = np.zeros(len(articles))
-        id_to_idx = {a.id: i for i, a in enumerate(articles)}
+    def evaluate(self, original_articles: List[NewsArticle], clusters: List[EventCluster]):
+        from sklearn.metrics import adjusted_rand_score
         
-        for cluster in clusters:
-            for article in cluster.articles:
-                pred_labels[id_to_idx[article.id]] = cluster.cluster_id
+        true_labels = []
+        pred_labels = []
+        
+        article_id_to_pred_cluster = {}
+        for c in clusters:
+            for a in c.articles:
+                article_id_to_pred_cluster[str(a.id)] = c.cluster_id
                 
-        true_labels = [a.true_cluster_id if a.true_cluster_id is not None else -1 for a in articles]
-        valid_idx = [i for i, t in enumerate(true_labels) if t != -1]
+        # To calculate Precision/Recall on pairs, we will count True Positives, False Positives, False Negatives
+        true_pairs = set()
+        pred_pairs = set()
         
-        if valid_idx:
-            ari = adjusted_rand_score([true_labels[i] for i in valid_idx], [pred_labels[i] for i in valid_idx])
-            print(f"✅ Качество алгоритма (Adjusted Rand Index): {ari:.4f}")
-            return ari
-        else:
-            print("No valid true_cluster_id found for metric evaluation.")
-            return None
+        # Group by true cluster id to get true pairs
+        true_clusters_dict = {}
+        for a in original_articles:
+            true_label = a.true_cluster_id if a.true_cluster_id is not None else -1
+            if true_label == -1:
+                continue
+            if true_label not in true_clusters_dict:
+                true_clusters_dict[true_label] = []
+            true_clusters_dict[true_label].append(str(a.id))
+            
+            true_labels.append(true_label)
+            pred_labels.append(article_id_to_pred_cluster.get(str(a.id), -1))
+            
+        for t_id, articles_in_cluster in true_clusters_dict.items():
+            for i in range(len(articles_in_cluster)):
+                for j in range(i+1, len(articles_in_cluster)):
+                    u, v = sorted([articles_in_cluster[i], articles_in_cluster[j]])
+                    true_pairs.add((u, v))
+                    
+        for c in clusters:
+            articles_in_cluster = [str(a.id) for a in c.articles]
+            for i in range(len(articles_in_cluster)):
+                for j in range(i+1, len(articles_in_cluster)):
+                    u, v = sorted([articles_in_cluster[i], articles_in_cluster[j]])
+                    pred_pairs.add((u, v))
+                    
+        tp = len(true_pairs.intersection(pred_pairs))
+        fp_pairs = pred_pairs - true_pairs
+        fn_pairs = true_pairs - pred_pairs
+        
+        fp = len(fp_pairs)
+        fn = len(fn_pairs)
+        
+        precision = tp / (tp + fp) if (tp + fp) > 0 else 0.0
+        recall = tp / (tp + fn) if (tp + fn) > 0 else 0.0
+        f1 = 2 * precision * recall / (precision + recall) if (precision + recall) > 0 else 0.0
+            
+        ari = adjusted_rand_score(true_labels, pred_labels)
+        print(f"✅ Качество алгоритма (Adjusted Rand Index): {ari:.4f}")
+        print(f"   Precision: {precision:.4f} | Recall: {recall:.4f} | F1: {f1:.4f}")
+        print(f"   True Positives: {tp} | False Positives: {fp} | False Negatives: {fn}")
+        return ari, precision, recall, f1, list(fp_pairs), list(fn_pairs)
 
 # --- Orchestrator ---
 class NewsDeduplicationPipeline:
@@ -295,6 +398,18 @@ class NewsDeduplicationPipeline:
         self.reranker = reranker
         self.prefilter = prefilter
         
+    def _evaluate_stage(self, stage_name: str, original_articles: List[NewsArticle], articles: List[NewsArticle], pairs: List[Tuple[int, int, float]], hidden_map: Dict[str, List[NewsArticle]]):
+        temp_clusters = self.clusterer.build_clusters(articles, pairs)
+        if hidden_map:
+            for cluster in temp_clusters:
+                restored = []
+                for a in cluster.articles:
+                    if str(a.id) in hidden_map:
+                        restored.extend(hidden_map[str(a.id)])
+                cluster.articles.extend(restored)
+        print(f"\n--- Оценка качества после этапа: {stage_name} ---")
+        self.evaluator.evaluate(original_articles, temp_clusters)
+        
     def process(self, original_articles: List[NewsArticle]) -> List[EventCluster]:
         if not original_articles:
             return []
@@ -304,6 +419,8 @@ class NewsDeduplicationPipeline:
         minhashes = None
         if self.prefilter:
             articles, hidden_map, minhashes = self.prefilter.deduplicate(articles)
+            # Evaluate after Pre-filtering (exact duplicates only)
+            self._evaluate_stage("MinHash Exact Pre-filter", original_articles, articles, [], hidden_map)
             
         print("Sorting articles by published_at for sliding window...")
         articles.sort(key=lambda x: x.published_at)
@@ -314,10 +431,16 @@ class NewsDeduplicationPipeline:
         print("Поиск кандидатов: Sliding Window Similarity Search.")
         pair_indices = self.search_engine.search_pairs(embeddings, articles, minhashes=minhashes)
         
+        # Intermediate evaluation after Sliding Window
+        dummy_pairs = [(u, v, 1.0) for u, v in pair_indices]
+        self._evaluate_stage("Sliding Window (E5 + MinHash)", original_articles, articles, dummy_pairs, hidden_map)
+        
         if self.reranker:
             approved_pairs = self.reranker.filter_pairs(articles, pair_indices)
+            # Intermediate evaluation after Cross-Encoder
+            self._evaluate_stage("Cross-Encoder Reranker", original_articles, articles, approved_pairs, hidden_map)
         else:
-            approved_pairs = [(u, v, 1.0) for u, v in pair_indices]
+            approved_pairs = dummy_pairs
             
         clusters = self.clusterer.build_clusters(articles, approved_pairs)
         
@@ -339,8 +462,9 @@ def main():
     parser.add_argument("--dup_input", type=str, default=None, help="Input JSON file with synthetic duplicates")
     parser.add_argument("--model_path", type=str, default="models/multilingual-e5-base", help="Path to the embedding model")
     parser.add_argument("--limit", type=int, default=None, help="Limit the number of news articles to process")
-    parser.add_argument("--threshold", type=float, default=0.98, help="Cosine similarity threshold for FAISS clustering")
+    parser.add_argument("--threshold", type=float, default=0.96, help="Cosine similarity threshold for FAISS clustering")
     parser.add_argument("--time_window", type=int, default=2, help="Sliding window in days")
+    parser.add_argument("--minhash_threshold", type=float, default=0.70, help="MinHash Jaccard threshold")
     parser.add_argument("--reranker_path", type=str, default="models/bge-reranker-v2-m3", help="Path or name of the cross-encoder")
     parser.add_argument("--cross_threshold", type=float, default=0.8, help="Threshold for the cross-encoder")
 
@@ -349,10 +473,10 @@ def main():
     # Инициализация компонентов
     data_loader = DataLoader(args.input, args.dup_input)
     embedder = CachedSentenceTransformerModel(model_name_or_path=args.model_path)
-    search_engine = WindowedSimilaritySearch(threshold=args.threshold, time_window_days=args.time_window)
+    search_engine = WindowedSimilaritySearch(threshold=args.threshold, time_window_days=args.time_window, minhash_threshold=args.minhash_threshold)
     clusterer = GraphClusterer()
     evaluator = MetricEvaluator()
-    reranker = CrossEncoderReranker(model_name_or_path=args.reranker_path, threshold=args.cross_threshold) if args.reranker_path else None
+    reranker = CrossEncoderReranker(model_name_or_path=args.reranker_path, threshold=args.cross_threshold) if args.reranker_path and args.reranker_path.lower() != "disabled" else None
     prefilter = MinHashPreFilter()
     
     pipeline = NewsDeduplicationPipeline(embedder, search_engine, clusterer, evaluator, reranker, prefilter)
