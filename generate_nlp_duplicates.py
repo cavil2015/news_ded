@@ -3,6 +3,7 @@ import random
 import os
 import re
 import argparse
+from datetime import datetime, timedelta
 
 def mutate_text(text: str) -> str:
     """
@@ -63,6 +64,16 @@ def generate_duplicates(input_file: str, output_file: str, limit: int):
         new_article['id'] = new_id
         new_article['source'] = 'Synthetic'
         new_article['true_cluster_id'] = original_id
+        
+        # Make the synthetic duplicate appear later in time (1 to 12 hours)
+        if 'published_at' in new_article and new_article['published_at']:
+            try:
+                dt = datetime.fromisoformat(new_article['published_at'].replace('Z', '+00:00'))
+                delay_hours = random.uniform(1, 12)
+                new_dt = dt + timedelta(hours=delay_hours)
+                new_article['published_at'] = new_dt.isoformat()
+            except Exception:
+                pass # fallback to original if parsing fails
         
         # Mutate title and content if they exist
         if 'title' in new_article:
